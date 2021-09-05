@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import useCheckMobileScreen from '../../hooks/useChekMobile'
 
 // must refactor later
+// 3 items
 const responsiveMain = {
   desktop: {
     breakpoint: { max: 1920, min: 1191 },
@@ -17,6 +18,7 @@ const responsiveMain = {
     items: 1,
   },
 };
+// 4 items
 const responsiveDense = {
   desktop: {
     breakpoint: { max: 1920, min: 1191 },
@@ -31,6 +33,7 @@ const responsiveDense = {
     items: 2,
   },
 };
+// 1 items
 const responsiveMbl = {
   mobile: {
     breakpoint: { max: 600, min: 0 },
@@ -40,7 +43,7 @@ const responsiveMbl = {
 
 export const CarousalItem = ({ children }) => {
   let deviceType = useCheckMobileScreen()
-  console.log(deviceType)
+  // console.log(deviceType)
   return (
     <Carousel
       responsive={responsiveMain}
@@ -68,7 +71,7 @@ export const CarousalItemDense = ({ children }) => {
       // infinite={true}
       // autoPlay={true}
       // autoPlaySpeed={2500}
-      transitionDuration={2500}
+      // transitionDuration={2500}
     >
       {children}
     </Carousel>
@@ -90,3 +93,7 @@ export const CarousalItemOnlyMobile = ({ children }) => {
     </Carousel>
   );
 };
+
+
+// .carousel-container {width: 100%;}
+// .carousel-item {width: 100%;}

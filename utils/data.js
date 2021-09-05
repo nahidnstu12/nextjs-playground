@@ -28,3 +28,14 @@ export const teammates = [
     img: "./img/profile/rubel.png",
   },
 ];
+
+// longCard
+export const longProduct = {
+  id:1,
+  productName:"Men's Clothing",
+  imgUrl:"/img/products/p-1.png",
+  totalViews:"230",
+  reviewCount:"4",
+  price:"230",
+  oldPrice:"260",
+}

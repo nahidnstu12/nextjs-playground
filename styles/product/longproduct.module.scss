@@ -1,0 +1,96 @@
+// variables
+$white: #fff;
+$black: #333;
+$orange: #ff9500;
+$light: rgba(0, 0, 0, 0.3);
+// mixins
+
+// styles
+.products {
+  display: flex;
+  padding: 5px;
+  gap: 10px;
+
+  .slideProduct {
+    overflow: hidden;
+    position: relative;
+    border: 0.1rem solid $light;
+    border-radius: 0.5rem;
+    background: $white;
+    margin: 1rem;
+    &:hover .icons {
+      right: 1rem;
+    }
+    .image {
+      padding: 1rem;
+
+      img {
+        height: 30rem;
+        width:30rem;
+        // width:100%;
+        object-fit: contain;
+      }
+    }
+    .content {
+      padding: 2rem;
+      border-top: 0.1rem solid $light;
+      h3 {
+        color: $black;
+        font-weight: normal;
+        font-size: 2.5rem;
+        padding: 0.5rem 0;
+      }
+      .price {
+        color: $orange;
+        font-weight: bolder;
+        font-size: 2.5rem;
+        padding: 0.5rem 0;
+        span {
+          color: $black;
+          font-weight: normal;
+          font-size: 1.5rem;
+          text-decoration: line-through;
+        }
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 1rem;
+        border-radius: 5rem;
+        background: $black;
+        color: $white;
+        font-size: 1.8rem;
+        padding: 0.9rem 3.5rem;
+        cursor: pointer;
+        &:hover {
+          background: $orange;
+          color: $white;
+        }
+      }
+    }
+    .icons {
+      position: absolute;
+      top: 0;
+      right: -7rem;
+      a {
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        text-align: center;
+        font-size: 2rem;
+        border-radius: 50%;
+        background: $black;
+        color: $white;
+        display: block;
+        margin-top: 1rem;
+        .iconsize {
+          font-size: larger;
+          color: $white;
+        }
+        &:hover {
+          background: $orange;
+          color: $white;
+        }
+      }
+    }
+  }
+}

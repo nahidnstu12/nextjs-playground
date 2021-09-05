@@ -1,11 +1,41 @@
-.btn {
-  border: 1px solid #333;
-  border-radius: 10px;
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  // border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7.5rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
 }
 
-.carousel-container{
+html::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5rem;
+}
+body {
+  background: #eee;
+}
+
+
+// carousal css
+.carousel-container {
   width: 100%;
 }
-.carousel-item{
+.carousel-item {
   width: 100%;
 }
