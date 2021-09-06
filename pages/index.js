@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { Typography } from "@material-ui/core";
 import CarrousalGallary from "../components/CarrousalGallary";
+import NeatCarousal from "../components/bannar/NeatBannar";
 
 export default function Home() {
-  
   return (
     <div className="flex flex-col py-2">
       <Head>
@@ -14,7 +14,8 @@ export default function Home() {
       <Typography className="text-red-500">Profile Collection</Typography>
 
       <CarrousalGallary />
+
+      <NeatCarousal />
     </div>
   );
 }
-

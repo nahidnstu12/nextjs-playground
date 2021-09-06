@@ -1,99 +1,34 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import useCheckMobileScreen from '../../hooks/useChekMobile'
+import useCheckMobileScreen from "../../hooks/useChekMobile";
 
-// must refactor later
-// 3 items
-const responsiveMain = {
-  desktop: {
-    breakpoint: { max: 1920, min: 1191 },
-    items: 3,
-  },
-  tabs: {
-    breakpoint: { max: 1190, min: 601 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 600, min: 0 },
-    items: 1,
-  },
-};
-// 4 items
-const responsiveDense = {
-  desktop: {
-    breakpoint: { max: 1920, min: 1191 },
-    items: 4,
-  },
-  tabs: {
-    breakpoint: { max: 1190, min: 601 },
-    items: 3,
-  },
-  mobile: {
-    breakpoint: { max: 600, min: 0 },
-    items: 2,
-  },
-};
-// 1 items
-const responsiveMbl = {
-  mobile: {
-    breakpoint: { max: 600, min: 0 },
-    items: 1,
-  },
-};
-
-export const CarousalItem = ({ children }) => {
-  let deviceType = useCheckMobileScreen()
-  // console.log(deviceType)
+export const CarousalItem = ({
+  children,
+  responsive,
+  showDots,
+  infinite,
+  autoPlay,
+  removeArrow,
+}) => {
+  let mobile = useCheckMobileScreen();
+  // console.log(mobile);
   return (
     <Carousel
-      responsive={responsiveMain}
+      responsive={responsive}
       containerClass="carousel-container"
       itemClass="carousel-item"
-      swipeable={true}
-      // infinite={deviceType ? true : false}
-      autoPlaySpeed={2500}
-      transitionDuration={2500}
-      // deviceType={deviceType}
-      autoPlay={deviceType  ? true : false}
+      swipeable={mobile ? true : false}
+      infinite={infinite}
       ssr={true}
-    >
-      {children}
-    </Carousel>
-  );
-};
-export const CarousalItemDense = ({ children }) => {
-  return (
-    <Carousel
-      responsive={responsiveDense}
-      containerClass="carousel-container"
-      itemClass="carousel-item"
-      swipeable={true}
-      // infinite={true}
-      // autoPlay={true}
+      showDots={showDots}
+      autoPlay={autoPlay}
+      removeArrowOnDeviceType={removeArrow}
       // autoPlaySpeed={2500}
       // transitionDuration={2500}
+      // deviceType={deviceType}
+      // autoPlay={deviceType  ? true : false}
     >
       {children}
     </Carousel>
   );
 };
-export const CarousalItemOnlyMobile = ({ children }) => {
-  return (
-    <Carousel
-      responsive={responsiveMbl}
-      containerClass="carousel-container"
-      itemClass="carousel-item"
-      swipeable={true}
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={1500}
-      transitionDuration={2500}
-    >
-      {children}
-    </Carousel>
-  );
-};
-
-
-// .carousel-container {width: 100%;}
-// .carousel-item {width: 100%;}
