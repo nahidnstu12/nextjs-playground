@@ -48,7 +48,7 @@ $light: #666;
 .normalBtn {
   @extend .btn;
   @include styles($radius: 5rem);
-  padding: 0.9rem 3.5rem;
+  padding: 0.9rem 2rem;
   &:hover {
     background: $orange;
     color: $white;
