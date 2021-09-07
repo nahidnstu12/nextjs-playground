@@ -1,0 +1,65 @@
+$red: #ff3838;
+$white: #fff;
+$black-300: #333;
+$orange: #ff9500;
+$green: #27ae60;
+$black-200: #192a56;
+$light: #666;
+// styles
+@mixin styles($color: $white, $bg: $black-200, $radius: 0.5rem) {
+  color: $color;
+  background-color: $bg;
+  border-radius: $radius;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.fluidBtn {
+  @extend .btn;
+  @include styles($color: $red, $bg: $white);
+  padding: 0.8rem 3rem;
+  border: 0.2rem solid $red;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background: $red;
+    transition: 0.3s linear;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &::before {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+.normalBtn {
+  @extend .btn;
+  @include styles($radius: 5rem);
+  padding: 0.9rem 3.5rem;
+  &:hover {
+    background: $orange;
+    color: $white;
+  }
+}
+.scaleBtn {
+  @extend .btn;
+  @include styles();
+  padding: 0.8rem 3rem;
+  &:hover {
+    background: $green;
+    letter-spacing: 0.1rem;
+  }
+}

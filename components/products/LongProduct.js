@@ -3,6 +3,7 @@ import { DefaultRating } from "../common/Ratings";
 import { FavoriteBorder, Visibility, ShoppingCart } from "@material-ui/icons";
 import { longProduct as data } from "../../utils/data";
 import { SingleIcon } from "../common/SingleComponent";
+import { NormalButton } from "../common/Button";
 
 export default function LongProductCard() {
   return (
@@ -14,7 +15,7 @@ export default function LongProductCard() {
       </div>
 
       <div className={styles.content}>
-        <DefaultRating value={data.reviewCount} totalViews={data.totalViews} />
+        <DefaultRating value={parseInt(data.reviewCount)} totalViews={data.totalViews} />
 
         <h3>{data.productName}</h3>
 
@@ -22,7 +23,7 @@ export default function LongProductCard() {
           ${data.price} <span>${data.oldPrice}</span>
         </div>
 
-        <SingleIcon className={styles.btn}>add to cart</SingleIcon>
+        <NormalButton text="add to cart"/>
       </div>
     </div>
   );

@@ -35,20 +35,6 @@ $box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
         line-height: 1.5;
         font-family: "Nunito", sans-serif;
       }
-      .btn {
-        margin-top: 1rem;
-        display: inline-block;
-        font-size: 1.7rem;
-        color: #fff;
-        background: $black;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        padding: 0.8rem 3rem;
-        &:hover {
-          background: $green;
-          letter-spacing: 0.1rem;
-        }
-      }
     }
     .image {
       flex: 1 1 30rem;

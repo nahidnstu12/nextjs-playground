@@ -1,0 +1,47 @@
+// variables
+$red: #ff3838;
+
+// styles
+
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  gap: 1.5rem;
+  min-height: 100vh;
+  align-items: center;
+  background: url(/img/bannar/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  .content {
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+    h3 {
+      font-size: 5rem;
+      color: #333;
+    }
+    p {
+      font-size: 1.7rem;
+      color: #666;
+      padding: 1rem 0;
+    }
+  }
+  .image {
+    flex: 1 1 40rem;
+    img {
+      width: 100%;
+      padding: 1rem;
+      animation: float 3s linear infinite;
+    }
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(3rem);
+  }
+}

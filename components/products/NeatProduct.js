@@ -2,6 +2,7 @@ import { Favorite, Visibility } from "@material-ui/icons";
 import { RatingOnly } from "../common/Ratings";
 import { SingleIcon } from "../common/SingleComponent";
 import styles from "../../styles/product/neat-product.module.scss";
+import { ScaleButton } from "../common/Button";
 
 export default function NeatProduct() {
   return (
@@ -23,7 +24,7 @@ export default function NeatProduct() {
       <h3>tasty food</h3>
       <RatingOnly value={4} />
       <span className={styles.price}>$15.99</span>
-      <SingleIcon className={styles.btn}>add to cart</SingleIcon>
+      <ScaleButton text="add to cart" />
     </div>
   );
 }
