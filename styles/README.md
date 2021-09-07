@@ -1,7 +1,11 @@
 ### Styles
 
 ```
+- styles.scss (scroll)
+- carouse.scss
+- mixins.scss
 - longproduct.module.scss (longProductCard)
-- styles.scss (scroll,carousal)
+- neat-bannar.module.scss
+- neat-product.module.scss
 - 
 ```

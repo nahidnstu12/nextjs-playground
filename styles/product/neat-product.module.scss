@@ -1,0 +1,88 @@
+@import "../mixins";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+// variables
+$green: #27ae60;
+$black: #192a56;
+$light: #666;
+$box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+// mixins
+
+// .dishes {
+.Container {
+  padding: 2rem;
+}
+.boxContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 1.5rem;
+}
+// }
+.box {
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: $box-shadow;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .iconsContainer {
+    @include display-flex($justify: space-between);
+    @include visibility(false);
+  }
+  .icons {
+    width: 5rem;
+    height: 5rem;
+    background: #eee;
+    position: relative;
+    border-radius: 50%;
+    &:hover {
+      background: $green;
+
+      .heartIcon,
+      .eyeIcon {
+        color: #fff;
+      }
+    }
+    .heartIcon,
+    .eyeIcon {
+      @include position($position: absolute, $top: 1.2rem, $left: 1.2rem);
+      border-radius: 50%;
+      font-size: 2.5rem;
+      color: $black;
+    }
+  }
+
+  &:hover .iconsContainer {
+    right: 1.5rem;
+    @include visibility();
+  }
+  &:hover .iconsContainer {
+    left: 1.5rem;
+    // @include visibility();
+  }
+
+  img {
+    height: 17rem;
+    margin: 1rem 0;
+  }
+  &:hover img {
+    transform: scale(1.1);
+  }
+  h3 {
+    color: $black;
+    font-size: 2.5rem;
+  }
+  .price {
+    color: $green;
+    font-weight: bolder;
+    margin-right: 1rem;
+    font-size: 2.5rem;
+  }
+  fieldset span {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    // color: $green;
+  }
+}

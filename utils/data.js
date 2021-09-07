@@ -39,3 +39,27 @@ export const longProduct = {
   price:"230",
   oldPrice:"260",
 }
+
+export const NeatBannar = [
+  {
+    id:1,
+    reviewCount:3,
+    foodTitle:"Spicy Noodle",
+    foodDescript:"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
+    imgUrl:"img/bannar/home-img-1.png"
+  },
+  {
+    id:2,
+    reviewCount:4,
+    foodTitle:"Fried Chicken",
+    foodDescript:"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
+    imgUrl:"img/bannar/home-img-2.png"
+  },
+  {
+    id:3,
+    reviewCount:1,
+    foodTitle:"Hot Pizza",
+    foodDescript:"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
+    imgUrl:"img/bannar/home-img-3.png"
+  }
+]

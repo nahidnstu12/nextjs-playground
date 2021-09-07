@@ -1,0 +1,32 @@
+// variables
+$arrow-bg: #44b775ab !important;
+$arrow-dir: #fff !important;
+$dotlist-bg: green !important;
+$dotlist-active-bg: green !important;
+
+// carousal css
+.carousel-container {
+  width: 100%;
+}
+.carousel-item {
+  width: 100%;
+}
+// custom arrows
+.react-multiple-carousel__arrow {
+  background: $arrow-bg;
+  //   bottom: 10%;
+  &::before {
+    color: $arrow-dir;
+  }
+}
+
+// custom dots
+// .custom-dot-list-style{}
+.react-multi-carousel-dot-list {
+  button {
+    border-color: $dotlist-bg;
+  }
+}
+.react-multi-carousel-dot--active button {
+  background: $dotlist-active-bg;
+}

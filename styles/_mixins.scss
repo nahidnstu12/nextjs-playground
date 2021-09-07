@@ -1,0 +1,27 @@
+@mixin display-flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin visibility($visible: true) {
+  @if ($visible == true) {
+    visibility: visible;
+    opacity: 1;
+  } @else {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@mixin position(
+  $position: relative,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

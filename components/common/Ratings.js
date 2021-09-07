@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
 import { Typography, withStyles } from "@material-ui/core";
@@ -7,7 +7,7 @@ import StarIcon from "@material-ui/icons/Star";
 // change rating color
 const StyledRating = withStyles({
   iconFilled: {
-    color: "#08b2bd",
+    color: "#27ae60",
   },
   iconHover: {
     color: "#08bd99",
@@ -19,7 +19,10 @@ export const RatingOnly = ({ value, totalViews }) => {
     <Box
       component="fieldset"
       borderColor="transparent"
-      style={{ display: "flex", justifyContent: "space-between" }}
+      style={{
+        display: "flex",
+        justifyContent: totalViews ? "space-between" : "center",
+      }}
     >
       <StyledRating
         name="customized-color"
@@ -28,7 +31,7 @@ export const RatingOnly = ({ value, totalViews }) => {
         precision={0.5}
         readOnly
       />
-      <Typography variant="h5">{totalViews} Reviews</Typography>
+      {totalViews && <Typography variant="h5">{totalViews} Reviews</Typography>}
     </Box>
   );
 };
@@ -37,7 +40,10 @@ export const DefaultRating = ({ value, totalViews }) => {
   return (
     <Box
       borderColor="transparent"
-      style={{ display: "flex", justifyContent: "space-between" }}
+      style={{
+        display: "flex",
+        justifyContent: totalViews ? "space-between" : "center",
+      }}
     >
       <Rating
         name="read-only"
@@ -46,19 +52,24 @@ export const DefaultRating = ({ value, totalViews }) => {
         precision={0.5}
         size="large"
       />
-      <Typography variant="h5">{totalViews} Reviews</Typography>
+      {totalViews && <Typography variant="h5">{totalViews} Reviews</Typography>}
     </Box>
   );
 };
 
-export const CustomizedRatings = () => {
+// have issues
+export const CustomizedRatings = ({}) => {
+  const [value, setValue] = useState(2);
+  const handleChange = (event) => setValue(parseInt(event.target.value));
   return (
     <Box component="fieldset" borderColor="transparent">
       <StyledRating
         name="customized-color"
-        defaultValue={2}
+        // defaultValue={value}
+        value={value}
         precision={0.5}
-        icon={<StarIcon fontSize="inherit" />}
+        icon={<StarIcon fontSize="large" />}
+        onChange={handleChange}
       />
     </Box>
   );
