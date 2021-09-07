@@ -1,9 +1,8 @@
 import styles from "../../styles/product/longproduct.module.scss";
 import { DefaultRating } from "../common/Ratings";
 import { FavoriteBorder, Visibility, ShoppingCart } from "@material-ui/icons";
-import Link from "next/link";
 import { longProduct as data } from "../../utils/data";
-
+import { SingleIcon } from "../common/SingleComponent";
 
 export default function LongProductCard() {
   return (
@@ -15,7 +14,6 @@ export default function LongProductCard() {
       </div>
 
       <div className={styles.content}>
-
         <DefaultRating value={data.reviewCount} totalViews={data.totalViews} />
 
         <h3>{data.productName}</h3>
@@ -43,13 +41,5 @@ const RenderIcon = () => {
         <Visibility className={styles.iconsize} />
       </SingleIcon>
     </div>
-  );
-};
-
-const SingleIcon = ({ url, className, children }) => {
-  return (
-    <Link href={url || "#"}>
-      <a className={className}>{children}</a>
-    </Link>
   );
 };

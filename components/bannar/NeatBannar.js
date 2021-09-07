@@ -24,7 +24,7 @@ const Bannar = ({ bannar }) => {
   return (
     <div className={styles.slide}>
       <div className={styles.content}>
-        <span>our special dish</span>
+        <span className={styles.title}>our special dish</span>
         <h3>{bannar.foodTitle}</h3>
         <p>{bannar.foodDescript}</p>
         <a href="#" className={styles.btn}>
