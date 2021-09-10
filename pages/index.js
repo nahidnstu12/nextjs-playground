@@ -2,7 +2,7 @@ import Head from "next/head";
 import CarrousalGallary from "../components/CarrousalGallary";
 import NeatCarousal from "../components/bannar/NeatBannar";
 import SectionHeader from "../components/common/SectionHeader";
-import FlickBannar from "../components/bannar/FlickBannar";
+// import FlickBannar from "../components/bannar/FlickBannar";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <SectionHeader isWhite={true} text="We" colorText="Made" />
-      <FlickBannar />
+      {/* <FlickBannar /> */}
       <CarrousalGallary />
       <NeatCarousal />
     </div>

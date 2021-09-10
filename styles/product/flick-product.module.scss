@@ -47,18 +47,20 @@ $red: #ff3838;
     transform: scale(1);
     opacity: 1;
   }
-  &:hover img{
+  &:hover img {
     transform: scale(1.3);
   }
 }
 
 // flickProductPop
+.border {
+  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+}
 .speciality {
   flex: 1 1 30rem;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  border: 0.1rem solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
   border-radius: 0.5rem;
   .image {
@@ -75,6 +77,8 @@ $red: #ff3838;
     padding: 2rem;
     img {
       margin: 1.5rem auto;
+      width: 5rem;
+      height: 5rem;
     }
     h3 {
       font-size: 2.5rem;

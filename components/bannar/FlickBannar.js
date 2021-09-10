@@ -1,22 +1,19 @@
 import { FluidButton } from "../common/Button";
 import styles from "../../styles/bannar/flick-bannar.module.scss";
 
-export default function FlickBannar() {
+export default function FlickBannar({data}) {
   return (
     <section className={styles.home} id="home">
       <div className={styles.content}>
-        <h3>food made with love</h3>
+        <h3>{data.title}</h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
-          accusamus tempore temporibus rem amet laudantium animi optio
-          voluptatum. Natus obcaecati unde porro nostrum ipsam itaque impedit
-          incidunt rem quisquam eos!
+        {data.description}
         </p>
        <FluidButton text="Order Now"/>
       </div>
 
       <div className={styles.image}>
-        <img src="img/bannar/home-img.png" alt="" />
+        <img src={data.image} alt="" />
       </div>
     </section>
   );

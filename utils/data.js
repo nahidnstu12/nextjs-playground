@@ -39,6 +39,17 @@ export const longProduct = {
   price:"230",
   oldPrice:"260",
 }
+// flickproduct
+export const data = {
+  id:1,
+  title:"Men's Clothing",
+  image:"/img/products/p-1.png",
+  totalViews:"230",
+  reviewCount:"4",
+  price:"230",
+  oldPrice:"260",
+  description:"While prerendering a page an error occurred. This can occur for many reasons from adding non-pages e.g. components to your pages folder or expecting props to be populated which are not."
+}
 
 export const NeatBannar = [
   {
