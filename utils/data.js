@@ -74,3 +74,13 @@ export const NeatBannar = [
     imgUrl:"img/bannar/home-img-3.png"
   }
 ]
+// navLinks name
+export const navlinks = [
+  { label: "Home", path: "/" },
+  { label: "Services", path: "services" },
+  { label: "Feature", path: "features" },
+  { label: "Portfolio", path: "portfolios" },
+  {label:"Team", path:"teams"},
+  { label: "Pricings", path: "pricings" },
+  { label: "Contacts", path: "contacts" },
+];

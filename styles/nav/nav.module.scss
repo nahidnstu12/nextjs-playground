@@ -1,0 +1,81 @@
+$hoverColor: #1abc9c;
+$background: #34495e;
+
+@mixin hoverChild($width: 100px, $left: 0) {
+  width: $width;
+  &:hover ~ .animation {
+    width: $width;
+    left: $left;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $background;
+  position: fixed;
+  width: 100%;
+  cursor: pointer;
+  .logo {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+}
+.nav {
+  position: relative;
+  //   margin: 20px auto;
+//   width: 590px;
+  height: 50px;
+  background: $background;
+  border-radius: 8px;
+  font-size: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  .navlinks {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    &:nth-child(1) {
+      @include hoverChild();
+    }
+
+    &:nth-child(2) {
+      @include hoverChild($width: 110px, $left: 110px);
+    }
+    &:nth-child(3) {
+      @include hoverChild($width: 110px, $left: 220px);
+    }
+    &:nth-child(4) {
+      @include hoverChild($width: 110px, $left: 330px);
+    }
+    &:nth-child(5) {
+      @include hoverChild($width: 110px, $left: 440px);
+    }
+    &:nth-child(6) {
+      @include hoverChild($width: 110px, $left: 550px);
+    }
+    &:nth-child(7) {
+      @include hoverChild($width: 110px, $left: 660px);
+    }
+  }
+//   .startHome {
+//     width: 100px;
+//     left: 0;
+//   }
+  .animation {
+    position: absolute;
+    // height: 100%;
+    // top: 0;
+    height: 5px;
+    bottom: 0;
+    z-index: 0;
+    background: $hoverColor;
+    border-radius: 8px;
+    transition: all 0.5s ease 0s;
+  }
+}

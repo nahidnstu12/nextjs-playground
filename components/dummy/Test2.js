@@ -1,104 +1,31 @@
-import React, { useState } from "react";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
-import { Typography } from "@material-ui/core";
-
-const useStyles = makeStyles({
-  button: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    borderRadius: 3,
-    border: 0,
-    color: "white",
-    height: 48,
-    padding: "0 30px",
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-  },
-  buttonBlue: {
-    background: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
-    boxShadow: "0 3px 5px 2px rgba(33, 203, 243, .3)",
-  },
-  // style rule
-  //   foo: (props) => ({
-  //     backgroundColor: props.backgroundColor,
-
-  //   }),
-  bar: {
-    // CSS property
-    color: (props) => props.color,
-    backgroundColor: (props) => props.backgroundColor,
-    textAlign: "center",
-    boxShadow: (props) =>
-      props.color === "red"
-        ? "0 3px 5px 2px rgba(255, 105, 135, .3)"
-        : "0 3px 5px 2px rgba(33, 203, 243, .3)",
-  },
-  tez:`
-  color:red;
-  width:20px;
-  padding-bottom:10px
-  `
-});
-
-export default function DynamicClassName() {
-  const classes = useStyles();
-  const [color, setColor] = React.useState("default");
-  const [dark, setDark] = useState(true);
-  const handleChange = (event) => {
-    setColor(event.target.checked ? "blue" : "default");
-  };
-  //   const setStyle = () => setDark()
+/* This example requires Tailwind CSS v2.0+ */
+export default function Example() {
   return (
-    <React.Fragment>
-     
-      <Button
-        className={clsx(classes.button, {
-          [classes.buttonBlue]: color === "blue",
-        })}
-      >
-        {"Class name branch"}
-      </Button>
-
-      <Typography className="">Tease Me</Typography>
-      <Typography className="">Wildly</Typography>
-      {/* <MyComponent />
-      <MyComponent2 />
-      <AdaptingHook />
-      <MyButton color="red">Red</MyButton> */}
-      <p className={classes.tez}>Tezz</p>
-    </React.Fragment>
-  );
+    <div className="bg-gray-50">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+        <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <span className="block">Ready to dive in?</span>
+          <span className="block text-indigo-600">Start your free trial today.</span>
+        </h2>
+        <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+          <div className="inline-flex rounded-md shadow">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+            >
+              Get started
+            </a>
+          </div>
+          <div className="ml-3 inline-flex rounded-md shadow">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
+            >
+              Learn more
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
-
-function MyComponent() {
-  // Simulated props for the purpose of the example
-  const props = { backgroundColor: "black", color: "white" };
-  // Pass the props as the first argument of useStyles()
-  const classes = useStyles(props);
-
-  return <div className={`${classes.foo} ${classes.bar}`}>Test</div>;
-}
-
-function MyComponent2() {
-  // Simulated props for the purpose of the example
-  const props = { backgroundColor: "red", color: "blue" };
-  // Pass the props as the first argument of useStyles()
-  const classes = useStyles(props);
-
-  return <div className={` ${classes.bar}`}>Test 2</div>;
-}
-function MyButton(props) {
-  const { color, ...other } = props;
-  const classes = useStyles(props);
-  return <Button className={classes.bar} {...other} />;
-}
-function AdaptingHook() {
-    return (
-      <React.Fragment>
-        <MyButton color="red">Red</MyButton>
-        <MyButton color="blue">Blue</MyButton>
-      </React.Fragment>
-    );
-  }
