@@ -1,9 +1,10 @@
 // import Product from "../components/products/LongProduct";
 import NeatProduct from "../components/products/NeatProduct";
 import styles from "../styles/product/neat-product.module.scss";
-// import stylesFlick from "../styles/product/flick-product.module.scss";
+import stylesFlick from "../styles/product/flick-product.module.scss";
 import SectionHeader from "../components/common/SectionHeader";
 import { LinearProgressLine } from "../components/common/Progress";
+import {FlickProduct} from '../components/products/FlickProduct'
 
 export default function Dashboard({ data }) {
   return (
@@ -21,16 +22,16 @@ export default function Dashboard({ data }) {
         ))}
       </div> */}
 
-      {/* <div className={stylesFlick.boxContainer}>
-        {[...Array(4)].map((_, id) => (
+      <div className={stylesFlick.boxContainer}>
+        {[...Array(8)].map((_, id) => (
           <FlickProduct key={id} />
         ))}
-      </div> */}
-      <div className={styles.boxContainer}>
+      </div>
+      {/* <div className={styles.boxContainer}>
         {data.map((d, id) => (
           <NeatProduct key={id} data={d} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

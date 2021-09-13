@@ -14,11 +14,11 @@
 html {
   // font-size: 62.5%;
   overflow-x: hidden;
-  scroll-padding-top: 7.5rem;
+  scroll-padding-top: 4rem;
   scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
-  width: 1rem;
+  width: 0.85rem;
 }
 
 html::-webkit-scrollbar-track {
@@ -27,7 +27,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
   background: #333;
-  border-radius: 5rem;
+  border-radius: 3.2rem;
 }
 body {
   background: #eee;

@@ -6,7 +6,7 @@ $green: #27ae60;
 $black-200: #192a56;
 $light: #666;
 // styles
-@mixin styles($color: $white, $bg: $black-200, $radius: 0.5rem) {
+@mixin styles($color: $white, $bg: $black-200, $radius: 0.25rem) {
   color: $color;
   background-color: $bg;
   border-radius: $radius;
@@ -21,8 +21,8 @@ $light: #666;
 .fluidBtn {
   @extend .btn;
   @include styles($color: $red, $bg: $white);
-  padding: 0.8rem 1.875rem;
-  border: 0.2rem solid $red;
+  padding: 0.5rem 1.875rem;
+  border: 2px solid $red;
   position: relative;
   overflow: hidden;
   z-index: 0;

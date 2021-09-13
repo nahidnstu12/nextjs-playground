@@ -4,24 +4,24 @@
 $green: #27ae60;
 $black: #192a56;
 $light: #666;
-$box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+$box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.1);
 // mixins
 
 // .dishes {
 .Container {
-  padding: 2rem;
+  padding: 1.25rem;
 }
 .boxContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  gap: 1rem;
 }
 // }
 .box {
-  padding: 2.5rem;
+  padding: 1.5rem;
   background: #fff;
-  border-radius: 0.5rem;
-  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: $box-shadow;
   position: relative;
   overflow: hidden;
@@ -32,8 +32,8 @@ $box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
     @include visibility(false);
   }
   .icons {
-    width: 5rem;
-    height: 5rem;
+    width: 3.125rem;
+    height: 3.125rem;
     background: #eee;
     position: relative;
     border-radius: 50%;
@@ -47,42 +47,42 @@ $box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
     }
     .heartIcon,
     .eyeIcon {
-      @include position($position: absolute, $top: 1.2rem, $left: 1.2rem);
+      @include position($position: absolute, $top: 0.87rem, $left: 0.87rem);
       border-radius: 50%;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       color: $black;
     }
   }
 
   &:hover .iconsContainer {
-    right: 1.5rem;
+    right: 1rem;
     @include visibility();
   }
   &:hover .iconsContainer {
-    left: 1.5rem;
+    left: 1rem;
     // @include visibility();
   }
 
   img {
-    height: 17rem;
-    margin: 1rem auto;
+    height: 10.625rem;
+    margin: 0.6rem auto;
   }
   &:hover img {
     transform: scale(1.1);
   }
   h3 {
     color: $black;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .price {
     color: $green;
     font-weight: bolder;
-    margin-right: 1rem;
-    font-size: 2.5rem;
+    margin-right: 0.6rem;
+    font-size: 1.5rem;
   }
   fieldset span {
     margin-right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     // color: $green;
   }
 }
