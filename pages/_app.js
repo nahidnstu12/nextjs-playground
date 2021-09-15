@@ -2,6 +2,8 @@ import "tailwindcss/tailwind.css";
 import "../styles/styles.scss";
 import { useEffect } from "react";
 import { StylesProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from '@material-ui/styles';
+import theme from "../hooks/theme";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -13,7 +15,9 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <StylesProvider injectFirst>
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </StylesProvider>
   );
 }

@@ -5,8 +5,10 @@ import stylesFlick from "../styles/product/flick-product.module.scss";
 import SectionHeader from "../components/common/SectionHeader";
 import { LinearProgressLine } from "../components/common/Progress";
 import {FlickProduct} from '../components/products/FlickProduct'
+import Link from 'next/link'
+import { Button } from "@material-ui/core";
 
-export default function Dashboard({ data }) {
+export default function Dashboard() {
   return (
     <div className={styles.Container}>
       <LinearProgressLine />
@@ -21,6 +23,7 @@ export default function Dashboard({ data }) {
           <FlickProductPop key={id} />
         ))}
       </div> */}
+      <Button color="primary" variant="contained">Test</Button>
 
       <div className={stylesFlick.boxContainer}>
         {[...Array(8)].map((_, id) => (
@@ -32,15 +35,21 @@ export default function Dashboard({ data }) {
           <NeatProduct key={id} data={d} />
         ))}
       </div> */}
+      <Link href="/products/categories">
+      <a>
+        <FlickProduct />
+      </a>
+      </Link>
+      
     </div>
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(`https://fakestoreapi.com/products`);
-  const data = await res.json();
-  // console.log(data);
-  return {
-    props: { data }, 
-  };
-}
+// export async function getStaticProps() {
+//   const res = await fetch(`https://fakestoreapi.com/products`);
+//   const data = await res.json();
+//   // console.log(data);
+//   return {
+//     props: { data }, 
+//   };
+// }

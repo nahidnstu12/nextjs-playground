@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import { useState } from "react";
 
-export const SingleIcon = ({ url, className, children, scrolling }) => {
+export const SingleIcon = ({ url, className, children }) => {
   return (
-    <Link href={url || "#"} to={scrolling}>
+    <Link href={url || "#"} passHref>
       <a className={className}>{children}</a>
     </Link>
   );
@@ -17,11 +16,7 @@ export const RenderNavLinks = ({
   handleActive,
   activeClass,
 }) => {
-  // const [active, seActive] = useState("");
-  // const handleActive = (e) => {
-  //   console.log(e.target.value);
-  //   setActive("active")
-  // };
+  
   return (
     <ScrollLink
       key={label}
