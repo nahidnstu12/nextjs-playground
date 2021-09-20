@@ -20,6 +20,7 @@
     "react-hook-form": "^7.14.0",
     "react-multi-carousel": "^2.6.5",
     "react-scroll": "^1.8.4",
+    "react-transition-group": "^4.4.2",
     "sass": "^1.35.1"
   },
   "devDependencies": {

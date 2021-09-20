@@ -1,5 +1,7 @@
 @import "./carousel.scss";
 
+$speed: 500ms;
+
 * {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -37,3 +39,36 @@ body {
   font-size: 2rem;
   padding: 2rem;
 }
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all $speed ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all $speed ease;
+}
+
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all $speed ease;
+}
+//   .menu-secondary-exit {
+
+//   }
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all $speed ease;
+}
+
