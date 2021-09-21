@@ -3,8 +3,9 @@ import { RatingOnly } from "../common/Ratings";
 import { SingleIcon } from "../common/SingleComponent";
 import styles from "../../styles/product/neat-product.module.scss";
 import { ScaleButton } from "../common/Button";
+import { subTitle } from "../../utils/helpers";
 
-export default function NeatProduct() {
+export default function NeatProduct({ data }) {
   return (
     <div className={styles.box}>
       <div className={styles.iconsContainer}>
@@ -20,10 +21,11 @@ export default function NeatProduct() {
         </SingleIcon>
       </div>
 
-      <img src="img/products/dish-1.png" alt="dish-food" />
-      <h3>tasty food</h3>
-      <RatingOnly value={4} />
-      <span className={styles.price}>$15.99</span>
+      <img src={data.image} alt="dish-food" />
+      {/* <img src="img/products/dish-1.png" alt="dish-food" /> */}
+      <h3>{subTitle(data.title, 30)}</h3>
+      <RatingOnly value={parseInt(data.rating.rate)} />
+      <span className={styles.price}>${data.price}</span>
       <ScaleButton text="add to cart" />
     </div>
   );

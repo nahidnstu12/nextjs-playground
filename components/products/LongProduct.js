@@ -54,7 +54,7 @@ const RenderBottomIcon = () => {
   return (
     <div className={styles.bottomIcons}>
       <SingleIcon url={"/wishlists"} className={styles.iconsize}>
-        <Favorite style={{ fontSize: "2.5rem" }} />
+        <Favorite style={{ fontSize: "1.5rem" }} />
       </SingleIcon>
       <SingleIcon
         url={"/cartlists"}
@@ -63,7 +63,7 @@ const RenderBottomIcon = () => {
         Add to cart
       </SingleIcon>
       <SingleIcon url={"/detail"} className={styles.iconsize}>
-        <Visibility style={{ fontSize: "2.5rem" }} />
+        <Visibility style={{ fontSize: "1.5rem" }} />
       </SingleIcon>
     </div>
   );

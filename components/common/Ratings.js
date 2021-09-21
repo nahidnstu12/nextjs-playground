@@ -27,7 +27,7 @@ export const RatingOnly = ({ value, totalViews }) => {
       <StyledRating
         name="customized-color"
         defaultValue={value}
-        icon={<StarIcon fontSize="large" />}
+        icon={<StarIcon fontSize="small" />}
         precision={0.5}
         readOnly
       />
@@ -50,9 +50,10 @@ export const DefaultRating = ({ value, totalViews }) => {
         value={value}
         readOnly
         precision={0.5}
-        size="large"
+        // size="small"
+        style={{fontSize:"1.5rem"}}
       />
-      {totalViews && <Typography variant="h5">{totalViews} Reviews</Typography>}
+      {totalViews && <Typography variant="h6">{totalViews} Reviews</Typography>}
     </Box>
   );
 };

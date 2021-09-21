@@ -31,35 +31,142 @@ export const teammates = [
 
 // longCard
 export const longProduct = {
-  id:1,
-  productName:"Men's Clothing",
-  imgUrl:"/img/products/p-1.png",
-  totalViews:"230",
-  reviewCount:"4",
-  price:"230",
-  oldPrice:"260",
-}
+  id: 1,
+  productName: "Men's Clothing",
+  imgUrl: "/img/products/p-1.png",
+  totalViews: "230",
+  reviewCount: "4",
+  price: "230",
+  oldPrice: "260",
+};
+// flickproduct
+export const data = {
+  id: 1,
+  title: "Men's Clothing",
+  image: "/img/products/p-1.png",
+  totalViews: "230",
+  reviewCount: "4",
+  price: "230",
+  oldPrice: "260",
+  description:
+    "While prerendering a page an error occurred. This can occur for many reasons from adding non-pages e.g. components to your pages folder or expecting props to be populated which are not.",
+};
 
 export const NeatBannar = [
   {
-    id:1,
-    reviewCount:3,
-    foodTitle:"Spicy Noodle",
-    foodDescript:"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
-    imgUrl:"img/bannar/home-img-1.png"
+    id: 1,
+    reviewCount: 3,
+    foodTitle: "Spicy Noodle",
+    foodDescript:
+      "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
+    imgUrl: "img/bannar/home-img-1.png",
   },
   {
-    id:2,
-    reviewCount:4,
-    foodTitle:"Fried Chicken",
-    foodDescript:"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
-    imgUrl:"img/bannar/home-img-2.png"
+    id: 2,
+    reviewCount: 4,
+    foodTitle: "Fried Chicken",
+    foodDescript:
+      "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
+    imgUrl: "img/bannar/home-img-2.png",
   },
   {
-    id:3,
-    reviewCount:1,
-    foodTitle:"Hot Pizza",
-    foodDescript:"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
-    imgUrl:"img/bannar/home-img-3.png"
-  }
-]
+    id: 3,
+    reviewCount: 1,
+    foodTitle: "Hot Pizza",
+    foodDescript:
+      "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sit Natus Dolor Cumque?",
+    imgUrl: "img/bannar/home-img-3.png",
+  },
+];
+// navLinks name
+export const navlinks = [
+  { label: "Home", path: "/" },
+  { label: "Services", path: "services" },
+  { label: "Feature", path: "features" },
+  { label: "Portfolio", path: "portfolios" },
+  { label: "Team", path: "teams" },
+  { label: "Pricings", path: "pricings" },
+  { label: "Contacts", path: "contacts" },
+];
+
+// multilevel category
+export const category = [
+  {
+    id: 1,
+    category: "Electronic Device",
+  },
+  {
+    id: 2,
+    category: "Electronic Accessiories",
+  },
+  {
+    id: 3,
+    category: "TV & Home Appliances",
+  },
+  {
+    id: 4,
+    category: "Automotive & Motorbike",
+  },
+  {
+    id: 5,
+    category: "Gadets",
+  },
+];
+
+export const subCategory = [
+  {
+    id: 1,
+    subcategory: "Mobile",
+    categoryId: 1,
+  },
+  {
+    id: 2,
+    subcategory: "Desktops",
+    categoryId: 1,
+  },
+  {
+    id: 3,
+    subcategory: "Laptops",
+    categoryId: 1,
+  },
+  {
+    id: 4,
+    subcategory: "Tablets",
+    categoryId: 1,
+  },
+  {
+    id: 5,
+    subcategory: "Gadets",
+    categoryId: 2,
+  },
+  {
+    id: 11,
+    subcategory: "Mobile A",
+    categoryId: 2,
+  },
+  {
+    id: 21,
+    subcategory: "Desktops A",
+    categoryId: 3,
+  },
+  {
+    id: 31,
+    subcategory: "Laptops A",
+    categoryId: 3,
+  },
+  {
+    id: 41,
+    subcategory: "Tablets A",
+    categoryId: 3,
+  },
+  {
+    id: 51,
+    subcategory: "Gadets A",
+    categoryId: 3,
+  },
+];
+
+export const getAllCategory = () => category;
+export const getAllSubCategory = (id) =>
+  subCategory.filter((sub) => sub.categoryId === id);
+export const getAllSubCategoryItem = () => {};

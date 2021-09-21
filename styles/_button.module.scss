@@ -6,23 +6,23 @@ $green: #27ae60;
 $black-200: #192a56;
 $light: #666;
 // styles
-@mixin styles($color: $white, $bg: $black-200, $radius: 0.5rem) {
+@mixin styles($color: $white, $bg: $black-200, $radius: 0.25rem) {
   color: $color;
   background-color: $bg;
   border-radius: $radius;
 }
 .btn {
   display: inline-block;
-  margin-top: 1rem;
-  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
   cursor: pointer;
 }
 
 .fluidBtn {
   @extend .btn;
   @include styles($color: $red, $bg: $white);
-  padding: 0.8rem 3rem;
-  border: 0.2rem solid $red;
+  padding: 0.5rem 1.875rem;
+  border: 2px solid $red;
   position: relative;
   overflow: hidden;
   z-index: 0;
@@ -47,8 +47,9 @@ $light: #666;
 }
 .normalBtn {
   @extend .btn;
-  @include styles($radius: 5rem);
-  padding: 0.9rem 2rem;
+  @include styles($radius: 3.125rem);
+  padding: 0.5rem 1.3rem;
+  margin-left: 0.75rem;
   &:hover {
     background: $orange;
     color: $white;
@@ -57,7 +58,7 @@ $light: #666;
 .scaleBtn {
   @extend .btn;
   @include styles();
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 1.875rem;
   &:hover {
     background: $green;
     letter-spacing: 0.1rem;

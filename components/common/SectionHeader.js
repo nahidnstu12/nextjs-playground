@@ -7,9 +7,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Nunito",
   },
   textSize: {
-    fontSize: "3rem",
+    fontSize: "1.875rem",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "24px",
+      fontSize: "1.5rem",
     },
   },
   textCenter: {
@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
   description: {
     color: "#838e7a",
-    fontSize: "1.8rem",
-    marginBottom: "3rem",
-    marginTop: "1rem",
+    fontSize: "1.25rem",
+    marginBottom: "1.875rem",
+    marginTop: ".5rem",
     [theme.breakpoints.down("xs")]: {
       fontSize: "13px",
     },

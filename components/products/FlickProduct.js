@@ -1,28 +1,33 @@
 import styles from "../../styles/product/flick-product.module.scss";
 import { FluidButton } from "../common/Button";
-export default function FlickProduct() {
+import { data } from "../../utils/data";
+
+export const FlickProduct = () => {
   return (
     <div className={styles.box}>
-      <img src="img/products/g-1.jpg" alt="product-1" />
+      <img src={data.image} alt="product-1" />
       <div className={styles.content}>
-        <h3>tasty food</h3>
+        <h3>{data.title}</h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti,
-          ipsum.
+         {data.description}
         </p>
         <FluidButton text="Order Now" />
       </div>
     </div>
   );
-}
+};
 
-export const FlickProductPop = () => {
+export const FlickProductPop = ({ data }) => {
   return (
-    <div className={styles.speciality}>
-      <img className={styles.image} src="img/products/s-img-4.jpg" alt="" />
+    <div className={`${styles.speciality} ${styles.border}`}>
+      <img
+        className={styles.image}
+        src={`/img/products/${data} category.png`}
+        alt=""
+      />
       <div className={styles.content}>
-        <img src="img/products/s-4.png" alt="" />
-        <h3>tasty burger</h3>
+        <img src={`/img/products/${data}.png`} alt="category" />
+        <h3>{data}</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
           inventore neque amet ipsa tenetur voluptates aperiam tempore libero
