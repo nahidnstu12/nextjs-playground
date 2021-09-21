@@ -32,6 +32,26 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "13px",
     },
   },
+  heading: {
+    textAlign: "center",
+    padding: "1.25rem 0",
+    // paddingBottom: "2.75rem",
+    fontSize: "2.1rem",
+    color: "#333",
+    "& span": {
+      background: "rgb(68, 190, 199)",
+      color: "#fff",
+      display: "inline-block",
+      padding: ".25rem 2.75rem",
+      clipPath: "polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%)",
+    },
+  },
+  polygonDescription: {
+    color: "#838e7a",
+    fontSize: "1rem",
+    marginBottom: "1.875rem",
+    marginTop: ".25rem",
+  },
 }));
 export default function SectionHeader({
   text,
@@ -58,3 +78,20 @@ export default function SectionHeader({
     </Grid>
   );
 }
+
+export const PolygonHeader = ({ text, colorText, description }) => {
+  const classes = useStyles();
+  return (
+    <>
+      <h1 className={classes.heading}>
+        {text}
+        <span className={classes.polygonText}>{colorText}</span>
+      </h1>
+      <p
+        className={`${classes.textFont} ${classes.polygonDescription} ${classes.textCenter}`}
+      >
+        {description}
+      </p>
+    </>
+  );
+};

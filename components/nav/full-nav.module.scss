@@ -1,4 +1,4 @@
-@import "../breakpoint";
+@import "../../styles/breakpoint";
 // variables
 $white: #fff;
 $black: #222;
@@ -8,6 +8,7 @@ $grey2: #959595;
 $grey-alt: #d1e2e9;
 $yellow: #ffd800;
 $green: #59b210;
+$box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 // mixins
 
 // styles
@@ -178,16 +179,16 @@ $green: #59b210;
         color: $white;
       }
     }
-    @include media($until: "sm") {
-      display: none;
-      border: none;
-      font-size: 1rem;
-    }
-    &:last-child {
-      @include media($until: "sm") {
-        display: block;
-      }
-    }
+    // @include media($until: "sm") {
+    //   display: none;
+    //   border: none;
+    //   font-size: 1rem;
+    // }
+    // &:last-child {
+    //   @include media($until: "sm") {
+    //     display: block;
+    //   }
+    // }
   }
   .fas {
     transition: all 300ms ease-in-out;
@@ -196,6 +197,118 @@ $green: #59b210;
     font-size: 0.75rem;
   }
 }
+.searchForm {
+  position: absolute;
+  top: 110%;
+  right: -110%;
+  width: 31rem;
+  height: 3.125rem;
+  background: #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: $box-shadow;
+   @include media($until: "sm") {
+     width: 90%;
+    }
+  &.active {
+    right: 1.25rem;
+    transition: 0.4s linear;
+  }
+  input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1rem;
+    color: $black;
+    padding: 0 1rem;
+  }
+  label {
+    font-size: 1.35rem;
+    padding-right: 1rem;
+    color: $black;
+    cursor: pointer;
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+.shoppingCart {
+  position: absolute;
+  top: 110%;
+  right: -110%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: $box-shadow;
+  width: 21.875rem;
+  background: #fff;
+  overflow-y: scroll;
+  max-height: 100vh;
+  
+  &.active {
+    right: 1.25rem;
+    transition: 0.4s linear;
+  }
+  .box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    margin: 0.5rem 0;
+    img {
+      height: 6.25rem;
+    }
+    .faTrash {
+      font-size: 1.25rem;
+      position: absolute;
+      top: 50%;
+      right: 1.25rem;
+      cursor: pointer;
+      color: $grey2;
+      transform: translateY(-50%);
+      &:hover {
+        color: $pink;
+      }
+    }
+    .content {
+      span {
+        color: $grey2;
+        font-size: 1rem;
+      }
+      .quantity {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+  .total {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    color: $black;
+  }
+  .btn {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    display: block;
+    padding: 0.5rem 2.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: 0.1rem solid $black;
+    color: $black;
+    cursor: pointer;
+    background: none;
+    text-align: center;
+    &:hover {
+      background: $pink;
+      border: none;
+      color:#fff;
+    }
+  }
+}
+
 .hamburger {
   display: none;
   @include media($until: "sm") {
