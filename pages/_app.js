@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 import "../styles/styles.scss";
+import "../styles/auth.scss";
 import { useEffect } from "react";
 import { StylesProvider } from "@material-ui/core/styles";
 import { ThemeProvider } from '@material-ui/styles';
