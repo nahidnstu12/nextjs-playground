@@ -1,8 +1,8 @@
 import { FluidButton } from "../common/Button";
 import styles from "../../styles/bannar/flick-bannar.module.scss";
-// import { data } from "../../utils/data";
+import { data } from "../../utils/data";
 
-export default function FlickBannar({data}) {
+export default function FlickBannar() {
   
   return (
     <section className={styles.home} id="home">

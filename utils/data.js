@@ -166,6 +166,57 @@ export const subCategory = [
   },
 ];
 
+// shopping cart
+export const shoppingCart = [
+  // {
+  //   id:1,
+  //   imgUrl:"/img/products/cart-img-1.png",
+  //   productName:"Watermaleon",
+  //   price:"12",
+  //   quantity:"1",
+
+  // },
+  // {
+  //   id:14,
+  //   imgUrl:"/img/products/cart-img-3.png",
+  //   productName:"Chicken",
+  //   price:"150",
+  //   quantity:"3",
+
+  // },
+  // {
+  //   id:15,
+  //   imgUrl:"/img/products/cart-img-3.png",
+  //   productName:"Chicken",
+  //   price:"150",
+  //   quantity:"3",
+
+  // },
+  {
+    id: 16,
+    imgUrl: "/img/products/cart-img-3.png",
+    productName: "Chicken",
+    price: "150",
+    quantity: "3",
+  },
+  {
+    id: 2,
+    imgUrl: "/img/products/cart-img-1.png",
+    productName: "Watermaleon",
+    price: "12",
+    quantity: "1",
+  },
+  {
+    id: 33,
+    imgUrl: "/img/products/cart-img-3.png",
+    productName: "Chicken",
+    price: "120",
+    quantity: "1",
+  },
+];
+
+// functions
+export const getAllShoppingProduct = () => shoppingCart;
 export const getAllCategory = () => category;
 export const getAllSubCategory = (id) =>
   subCategory.filter((sub) => sub.categoryId === id);

@@ -5,7 +5,9 @@ import SectionHeader from "../components/common/SectionHeader";
 import Example from "../components/dummy/Test2";
 // import { RenderNavLinks } from "../components/common/SingleComponent";
 // import Navbar from "../components/nav/Navbar";
-// import FlickBannar from "../components/bannar/FlickBannar";
+import FlickBannar from "../components/bannar/FlickBannar";
+import Navbar from '../components/nav/Navbar'
+import MultilevelCategory from '../components/nav/MultiLevelCategory'
 
 export default function Home() {
   return (
@@ -14,8 +16,9 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <MultilevelCategory />
       <SectionHeader isWhite={true} text="We" colorText="Made" />
-      {/* <FlickBannar /> */}
+      <FlickBannar />
       <Example />
       <CarrousalGallary />
       <NeatCarousal />
