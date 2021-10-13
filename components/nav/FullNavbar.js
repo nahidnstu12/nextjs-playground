@@ -120,7 +120,7 @@ const SearchInput = ({ isOpen }) => {
       className={`${styles.searchForm} ${isOpen ? styles.active : ""}`}
     >
       <input type="search" id="search-box" placeholder="search here..." />
-      <label for="search-box" className={`${styles.fa} fa-search`}>
+      <label htmlFor="search-box" className={`${styles.fa} fa-search`}>
         <Search />
       </label>
     </form>
@@ -135,7 +135,7 @@ const ShortShoppingCart = ({ isOpenCart }) => {
         className={`${styles.shoppingCart} ${isOpenCart ? styles.active : ""}`}
       >
         {cart.map((item) => (
-          <div className={styles.box}>
+          <div className={styles.box} key={item.id}>
             <Delete className={styles.faTrash} />
             <img src={item.imgUrl} alt={item.productName} />
             <div className={styles.content}>

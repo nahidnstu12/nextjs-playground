@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { StylesProvider } from "@material-ui/core/styles";
 import { ThemeProvider } from '@material-ui/styles';
 import theme from "../hooks/theme";
+import { Provider } from "next-auth/client";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -15,11 +16,13 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
   return (
-    <StylesProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </StylesProvider>
+    <Provider>
+      <StylesProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </StylesProvider>
+    </Provider>
   );
 }
 

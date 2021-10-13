@@ -2,7 +2,9 @@ import { useState } from "react";
 import { FaFacebookF, FaGooglePlusG, FaLinkedinIn } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import styles from "./auth.module.scss";
-export default function SliderAuth() {
+import { signIn } from "next-auth/client";
+
+export default function SliderAuth({providers}) {
   const [isSignup, setSignup] = useState(true);
 
   const handleSignUp = () => {
@@ -25,6 +27,7 @@ export default function SliderAuth() {
             title="Create Account"
             optionText="or use your email for registration"
             btnText="Sign Up"
+            providers={providers}
             // onSubmit={handleSubmit(onSubmit)}
           />
         ) : (
@@ -33,6 +36,7 @@ export default function SliderAuth() {
             title="Sign in"
             optionText="or use your account"
             btnText="Sign In"
+            providers={providers}
           />
         )}
 
@@ -79,7 +83,7 @@ const AuthForm = (props) => {
     <div className={`${styles.form_container} ${container}`}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1>{props.title}</h1>
-        <RenderSocials />
+        <RenderSocials providers={props.providers}/>
         <span>{props.optionText}</span>
         {props.container === "signup" && (
           <CustomInput
@@ -154,7 +158,11 @@ const CustomInput = ({
 const RenderSocials = (props) => {
   return (
     <div className={styles.social_container}>
-      <a href="#" className={styles.social}>
+      <a
+        href="#"
+        className={styles.social}
+        onClick={() => signIn(props.providers.facebook.id)}
+      >
         <FaFacebookF />
       </a>
       <a href="#" className={styles.social}>
