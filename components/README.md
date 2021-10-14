@@ -22,5 +22,5 @@
 ```
 -fullNavbar
 -multilevel category
--navhover
+-navHover
 ```
