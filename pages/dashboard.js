@@ -21,13 +21,13 @@ import { useEffect } from "react";
 import Router from "next/router";
 
 
-export default function Dashboard({ providers, session }) {
+export default function Dashboard() {
 
-  console.log({ providers, session });
-  useEffect(() => {
-    if (session) return Router.push("/navpage");
-  }, [session]);
-  if (session) return null;
+  // console.log({ providers, session });
+  // useEffect(() => {
+  //   if (session) return Router.push("/navpage");
+  // }, [session]);
+  // if (session) return null;
   
   // const [session] = useSession();
   //   console.log(session?.user.email);
@@ -41,17 +41,17 @@ export default function Dashboard({ providers, session }) {
       ) : (
         <Link href="/auth/login"><a>signIn</a></Link>
       )} */}
-      <button onClick={() => signout()}>Logout</button>
-      <SliderAuth providers={providers} />
+      <button >Logout</button>
+      {/* <SliderAuth providers={providers} /> */}
     </div>
   );
 }
-Dashboard.getInitialProps = async (context) => {
-  return {
-    providers: await providers(context),
-    session: await getSession(context),
-  };
-};
+// Dashboard.getInitialProps = async (context) => {
+//   return {
+//     providers: await providers(context),
+//     session: await getSession(context),
+//   };
+// };
 // export async function getStaticProps() {
 //   const res = await fetch(`https://fakestoreapi.com/products`);
 //   const data = await res.json();

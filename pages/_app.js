@@ -1,11 +1,12 @@
 import "tailwindcss/tailwind.css";
 import "../styles/styles.scss";
-import "../styles/auth.scss";
+// import "../styles/auth.scss";
 import { useEffect } from "react";
 import { StylesProvider } from "@material-ui/core/styles";
 import { ThemeProvider } from '@material-ui/styles';
 import theme from "../hooks/theme";
 import { Provider } from "next-auth/client";
+import { CookiesProvider } from "react-cookie";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -16,13 +17,15 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
   return (
-    <Provider>
-      <StylesProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </StylesProvider>
-    </Provider>
+    <CookiesProvider>
+      {/* <Provider> */}
+        <StylesProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </StylesProvider>
+      {/* </Provider> */}
+    </CookiesProvider>
   );
 }
 

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import styles from "./auth.module.scss";
 import { signIn } from "next-auth/client";
 
-export default function SliderAuth({providers}) {
+export default function SliderAuth({ providers }) {
   const [isSignup, setSignup] = useState(true);
 
   const handleSignUp = () => {
@@ -28,7 +28,6 @@ export default function SliderAuth({providers}) {
             optionText="or use your email for registration"
             btnText="Sign Up"
             providers={providers}
-            // onSubmit={handleSubmit(onSubmit)}
           />
         ) : (
           <AuthForm
@@ -37,6 +36,7 @@ export default function SliderAuth({providers}) {
             optionText="or use your account"
             btnText="Sign In"
             providers={providers}
+            // onSubmit={handleSubmitLogin(onSubmit)}
           />
         )}
 
@@ -70,7 +70,7 @@ const AuthForm = (props) => {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "all" });
-  
+
   const onSubmit = (data, e) => {
     console.log(data);
     e.target.reset();
@@ -79,11 +79,40 @@ const AuthForm = (props) => {
     props.container === "signup"
       ? styles.signup_container
       : styles.signin_container;
+
+  // const handleSubmit = async (formData) => {
+  //   setSubmitting(true);
+  //   setServerErrors([]);
+
+  //   const response = await fetch("/api/auth", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       name: formData.name,
+  //       email: formData.email,
+  //       password: formData.password,
+  //       terms: formData.terms,
+  //       token,
+  //     }),
+  //   });
+  //   const data = await response.json();
+
+  //   if (data.errors) {
+  //     setServerErrors(data.errors);
+  //   } else {
+  //     console.log("success, redirect to home page");
+  //   }
+
+  //   setSubmitting(false);
+  // };
+  
   return (
     <div className={`${styles.form_container} ${container}`}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1>{props.title}</h1>
-        <RenderSocials providers={props.providers}/>
+        <RenderSocials providers={props.providers} />
         <span>{props.optionText}</span>
         {props.container === "signup" && (
           <CustomInput
