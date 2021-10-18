@@ -83,10 +83,13 @@ export const navlinks = [
   { label: "Home", path: "/" },
   { label: "Services", path: "services" },
   { label: "Feature", path: "features" },
-  { label: "Portfolio", path: "portfolios" },
-  { label: "Team", path: "teams" },
-  { label: "Pricings", path: "pricings" },
+  // { label: "Portfolio", path: "portfolios" },
+  // { label: "Team", path: "teams" },
+  // { label: "Pricings", path: "pricings" },
   { label: "Contacts", path: "contacts" },
+  { label: "Register", path: "register" },
+  { label: "Login", path: "login" },
+  { label: "Logout", path: "logout" },
 ];
 
 // multilevel category

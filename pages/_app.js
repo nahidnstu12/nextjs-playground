@@ -3,10 +3,12 @@ import "../styles/styles.scss";
 // import "../styles/auth.scss";
 import { useEffect } from "react";
 import { StylesProvider } from "@material-ui/core/styles";
-import { ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider } from "@material-ui/styles";
 import theme from "../hooks/theme";
 import { Provider } from "next-auth/client";
 import { CookiesProvider } from "react-cookie";
+import wrapper from "../redux/store";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -19,14 +21,16 @@ function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>
       {/* <Provider> */}
-        <StylesProvider injectFirst>
-          <ThemeProvider theme={theme}>
+      <StylesProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <Layout>
             <Component {...pageProps} />
-          </ThemeProvider>
-        </StylesProvider>
+          </Layout>
+        </ThemeProvider>
+      </StylesProvider>
       {/* </Provider> */}
     </CookiesProvider>
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

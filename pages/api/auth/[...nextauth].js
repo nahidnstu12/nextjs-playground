@@ -24,10 +24,10 @@ export default NextAuth({
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
     }),
   ],
-  pages: {
-    signIn: "/auth/login",
-    signIn:"/dashboard",
-  },
+  // pages: {
+  //   signIn: "/auth/login",
+  //   signIn:"/dashboard",
+  // },
 
   // SQL or MongoDB database (or leave empty)
   // database: process.env.DATABASE_URL,

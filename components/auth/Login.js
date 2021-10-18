@@ -3,101 +3,88 @@ import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
 import router from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import { dispatchLogin } from "../../redux/actions/authAction";
+
 
 export default function Login() {
   const [submitting, setSubmitting] = useState(false);
   const [serverErrors, setServerErrors] = useState([]);
-  const [cookies, setCookies] = useCookies(["login_cookie"]);
+  const dispatch = useDispatch();
+  const { notify, auth } = useSelector((state) => state);
+ 
+  const authToken = auth.auth?.token;
+  const isLoading = notify.notify?.loading;
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "all" });
+
   const handleSignIn = async (formdata) => {
-    setSubmitting(true);
-    setServerErrors([]);
-    const res = await fetch("https://fakestoreapi.com/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: formdata.email,
-        password: formdata.password,
-      }),
-    });
-    const data = await res.json();
-    console.log(data);
-    if (data.msg) {
-      setServerErrors(data.msg);
-      //   console.log(data.errors);
-    } else {
-      console.log("success to login");
-      setCookies("login_cookie", JSON.stringify(data.token), {
-        path: "/",
-        maxAge: 3600,
-        sameSite: true,
-      });
-    }
-    setSubmitting(false);
+    const cred = {
+      username: formdata.email,
+      password: formdata.password,
+    };
+    dispatch(dispatchLogin(cred));
   };
   useEffect(() => {
-    if (cookies.login_cookie !== undefined) {
-      router.push("/dashboard");
-    }
-    console.log(cookies);
-  }, [cookies]);
+    if (Object.keys(auth).length !== 0) router.push("/dashboard");
+
+    // console.log(cookies);
+  }, [authToken]);
   return (
-    <div className={styles.form_wrapper}>
-      <div className={styles.form_container}>
-        <div className={styles.title_container}>
-          <h2>Responsive Login Form</h2>
-        </div>
-        <div className={`styles.row clearfix`}>
-          <div>
-            <form onSubmit={handleSubmit(handleSignIn)}>
-              {/* have any server errors */}
-              {serverErrors && (
-                <ul>
-                  {/* {serverErrors.map((err) => (
+    !isLoading && (
+      <div className={styles.form_wrapper}>
+        <div className={styles.form_container}>
+          <div className={styles.title_container}>
+            <h2>Responsive Login Form</h2>
+          </div>
+          <div className={`styles.row clearfix`}>
+            <div>
+              <form onSubmit={handleSubmit(handleSignIn)}>
+                {/* have any server errors */}
+                {serverErrors && (
+                  <ul>
+                    {/* {serverErrors.map((err) => (
                     <li key={err}>{err}</li>
                   ))} */}
-                  <li>{serverErrors}</li>
-                </ul>
-              )}
-              <InputField
-                inputStyle={styles.input_field}
-                icon={<MdOutlineEmail />}
-                type="text"
-                name="email"
-                register={register}
-                required="Input field can not be empty"
-                error={errors.email}
-                placeholder="Email"
-                className={styles.inputBox}
-              />
-              <InputField
-                inputStyle={styles.input_field}
-                icon={<RiLockPasswordLine />}
-                type="text"
-                name="password"
-                placeholder="Password"
-                className={styles.inputBox}
-                register={register}
-                required="Input field can not be empty"
-                error={errors.password}
-              />
+                    <li>{serverErrors}</li>
+                  </ul>
+                )}
+                <InputField
+                  inputStyle={styles.input_field}
+                  icon={<MdOutlineEmail />}
+                  type="text"
+                  name="email"
+                  register={register}
+                  required="Input field can not be empty"
+                  error={errors.email}
+                  placeholder="Email"
+                  className={styles.inputBox}
+                />
+                <InputField
+                  inputStyle={styles.input_field}
+                  icon={<RiLockPasswordLine />}
+                  type="text"
+                  name="password"
+                  placeholder="Password"
+                  className={styles.inputBox}
+                  register={register}
+                  required="Input field can not be empty"
+                  error={errors.password}
+                />
 
-              <button className={styles.button} disabled={submitting}>
-                Login
-              </button>
-            </form>
+                <button className={styles.button} disabled={submitting}>
+                  Login
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    )
   );
 }
 

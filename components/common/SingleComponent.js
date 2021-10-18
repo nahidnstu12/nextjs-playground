@@ -8,6 +8,13 @@ export const SingleIcon = ({ url, className, children }) => {
     </Link>
   );
 };
+export const SingleLink = ({ url, className, label }) => {
+  return (
+    <Link href={url || "#"} passHref>
+      <a className={className}>{label}</a>
+    </Link>
+  );
+};
 
 export const RenderNavLinks = ({
   label,
