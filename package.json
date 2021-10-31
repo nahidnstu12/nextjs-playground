@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "json-server": "json-server db.json -p 5000 -d 2000 -w db.json"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -14,6 +15,7 @@
     "@material-ui/styles": "^4.11.4",
     "axios": "^0.21.1",
     "js-cookie": "^3.0.1",
+    "json-server": "^0.17.0",
     "mobile-detect": "^1.4.5",
     "next": "latest",
     "next-auth": "^3.29.0",

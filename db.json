@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "content": "This offer is only available to new customers purchasing a Pro Annual Plan Online. This offer is not available to customers with pre-existing discounts. Maximum of 9 Annual Licenses per Purchase. This coupon has no cash value and can only be used for up to 9 Pro Annual Licenses. Coupon must be redeemed by 10/31/21 at 11:59PM PT and will be effective for 1 annual billing cycle. This cannot be combined, exchanged, or used in conjunction with any other offer. Please note that Federal, State and Local governments are not eligible for this promotion. These fees are exclusive of taxes.",
+      "createdAt": 1625745022480
+    },
+    {
+      "id": 2,
+      "content": "This is a post with id 2",
+      "createdAt": 1625745022485
+    },
+    {
+      "id": 3,
+      "content": "This is a post with id 3",
+      "createdAt": 1625745022490
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "content": "This is a comment of post 1",
+      "postId": 1,
+      "createdAt": 1625745022480
+    },
+    {
+      "id": 3,
+      "content": "This is a comment of post 1",
+      "postId": 1
+      ,"createdAt": 1625745022490
+    },
+    {
+      "id": 2,
+      "content": "This is a comment of post 2",
+      "postId": 2,
+      "createdAt": 1625745022495
+    },
+    {
+      "id": 5,
+      "content": "This is a comment of post 2",
+      "createdAt": 1625745022496,
+      "postId": 2
+    },
+    {
+      "id": 7,
+      "content": "This is a comment of post 3",
+      "postId": 3,
+      "createdAt": 1625745022499
+    }
+  ]
+}
