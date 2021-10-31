@@ -9,9 +9,9 @@ export default function Home() {
   const [posts, setPosts] = useState(null);
   const getPosts = async () => {
     try {
-      const response = await axios.get("/posts?_order=desc");
+      const response = await axios.get("/posts?_sort=createdAt&_order=desc");
       setPosts(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -21,7 +21,7 @@ export default function Home() {
   }, []);
   return (
     <div className="m-8">
-      <CreatePost />
+      <CreatePost setPosts={setPosts}/>
       <h3 className="text-center font-semibold text-2xl mt-4 text-green-800">
         All Posts
       </h3>

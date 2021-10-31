@@ -14,6 +14,26 @@
       "id": 3,
       "content": "This is a post with id 3",
       "createdAt": 1625745022490
+    },
+    {
+      "id": 318,
+      "content": "test post 45",
+      "createdAt": 1635661275114
+    },
+    {
+      "id": 334,
+      "content": "love post 34",
+      "createdAt": 1635661408654
+    },
+    {
+      "id": 64,
+      "content": "testing failed",
+      "createdAt": 1635663608426
+    },
+    {
+      "id": 663,
+      "content": "final test ",
+      "createdAt": 1635664392539
     }
   ],
   "comments": [
@@ -26,8 +46,8 @@
     {
       "id": 3,
       "content": "This is a comment of post 1",
-      "postId": 1
-      ,"createdAt": 1625745022490
+      "postId": 1,
+      "createdAt": 1625745022490
     },
     {
       "id": 2,
@@ -46,6 +66,18 @@
       "content": "This is a comment of post 3",
       "postId": 3,
       "createdAt": 1625745022499
+    },
+    {
+      "id": 667,
+      "postId": "1",
+      "content": "Accepted",
+      "createdAt": 1635664004278
+    },
+    {
+      "id": 946,
+      "postId": "663",
+      "content": "after comment",
+      "createdAt": 1635664407702
     }
   ]
 }

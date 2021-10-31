@@ -15,7 +15,9 @@ export default function comments() {
   console.log(postId);
   const getComments = async () => {
     try {
-      const { data } = await axios.get(`/posts/${postId}/comments?_order=desc`);
+      const { data } = await axios.get(
+        `/posts/${postId}/comments?_sort=createdAt&_order=desc`
+      );
       setComments(data);
       //   console.log(res);
     } catch (err) {
@@ -42,7 +44,7 @@ export default function comments() {
       {!post && <Loading />}
       {post && <PostCard data={post} singlePost={true}/>}
 
-      <CreateComment />
+      <CreateComment postId={postId} setComments={setComments}/>
 
       <h3 className="text-center font-semibold text-2xl mt-4 text-green-800">
         All Comments
