@@ -1,36 +1,38 @@
-import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
 import CreatePost from "./CreatePost";
 import PostCard from "./PostCard";
-import Loading from "../common/Loading";
+import { LoadingTale } from "../common/Loading";
+import useSWR from "swr";
+import PaginationTW from "../common/PaginationTW";
+import { useState } from "react";
 
 export default function Home() {
-  const [posts, setPosts] = useState(null);
-  const getPosts = async () => {
-    try {
-      const response = await axios.get("/posts?_sort=createdAt&_order=desc");
-      setPosts(response.data);
-      // console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  useEffect(() => {
-      getPosts();
-  }, []);
+  const [currentPage, setCurrentPage] = useState(1);
+  const {
+    data: posts,
+    mutate,
+    error,
+  } = useSWR(
+    `/posts?_sort=createdAt&_order=desc&_page=${currentPage}&_limit=6`
+  );
+  const { data: allPosts } = useSWR(`/posts`,{revalidateIfStale:false});
+  // console.log(posts?.length);
   return (
     <div className="m-8">
-      <CreatePost setPosts={setPosts}/>
+      <CreatePost mutate={mutate} />
       <h3 className="text-center font-semibold text-2xl mt-4 text-green-800">
         All Posts
       </h3>
-      {!posts && <Loading />}
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+      {!posts && <LoadingTale />}
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 h-96">
         {posts?.map((post) => (
           <PostCard key={post.id} data={post} />
         ))}
       </div>
+      <PaginationTW
+        postLength={allPosts?.length}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 }

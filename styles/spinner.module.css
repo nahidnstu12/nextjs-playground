@@ -5,9 +5,19 @@
   width: 10em;
   height: 10em;
 }
+.loaderContainer{
+  display: grid;
+  place-items: center;
+  /* height: 200px;
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px; */
+}
 .loader {
-  margin: 60px auto;
+  /* margin: 60px auto; */
+  display: inline-flex;
   font-size: 10px;
+  margin-top: 60px;
   position: relative;
   text-indent: -9999em;
   border-top: 1.1em solid rgba(255, 151, 0, 0.2);

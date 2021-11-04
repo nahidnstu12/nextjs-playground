@@ -9,6 +9,11 @@ import { Provider } from "next-auth/client";
 import { CookiesProvider } from "react-cookie";
 import wrapper from "../redux/store";
 import Layout from "../components/Layout";
+import { SWRConfig } from "swr";
+import axios from "axios";
+
+
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -19,17 +24,19 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
   return (
-    <CookiesProvider>
-      {/* <Provider> */}
-      <StylesProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
-      </StylesProvider>
-      {/* </Provider> */}
-    </CookiesProvider>
+    <SWRConfig value={{ fetcher, dedupingInterval:10000 }}>
+      <CookiesProvider>
+        {/* <Provider> */}
+        <StylesProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeProvider>
+        </StylesProvider>
+        {/* </Provider> */}
+      </CookiesProvider>
+    </SWRConfig>
   );
 }
 

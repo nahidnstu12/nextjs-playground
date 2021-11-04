@@ -1,24 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
-export default function CreateComment({postId,setComments}) {
+export default function CreateComment({ postId, mutate }) {
   const [content, setContent] = useState("");
-  const [loading, setLoading] = useState(false);
-// console.log(postId);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
     try {
       const id = Math.floor(Math.random() * 1000);
+      const FAKE_DATA = {
+        id,
+        postId,
+        content,
+        createdAt: Date.now(),
+        clientOnly: true,
+      };
+      mutate((comments) => [FAKE_DATA, ...comments], false);
+      setContent("");
       const res = await axios.post(`/posts/${postId}/comments`, {
         id,
         postId,
         content,
         createdAt: Date.now(),
       });
-      setComments((comments) => [res.data, ...comments]);
-      setContent("");
-      setLoading(false);
+      mutate();
+     
     } catch (error) {
       console.error(error);
     }
@@ -34,7 +41,7 @@ export default function CreateComment({postId,setComments}) {
         onChange={(e) => setContent(e.target.value)}
       ></textarea>
       <button className="w-32 bg-green-600 text-white p-2 rounded hover:bg-green-800 transistion">
-        {loading ? "Adding " : "Add "} Comment
+        Add Comment
       </button>
     </form>
   );
