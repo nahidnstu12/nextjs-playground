@@ -10,7 +10,7 @@ const Loading = () => {
 };
 export const LoadingTale = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center m-4">
       <div
         className="
         animate-spin

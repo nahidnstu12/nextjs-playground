@@ -17,7 +17,7 @@ export default function CreatePost({mutate}) {
       };
       mutate( posts => [FAKE_DATA, ...posts], false);
       setContent("");
-      const {data} = await axios.post("/posts", {
+       await axios.post("/posts", {
         id,
         content,
         createdAt: Date.now(),

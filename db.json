@@ -129,6 +129,21 @@
       "id": 360,
       "content": "bad night",
       "createdAt": 1635966470380
+    },
+    {
+      "id": 457,
+      "content": "November",
+      "createdAt": 1636139025307
+    },
+    {
+      "id": 152,
+      "content": "Sucks Lab",
+      "createdAt": 1636139078334
+    },
+    {
+      "id": 763,
+      "content": "coding is cool thing",
+      "createdAt": 1636139465348
     }
   ],
   "comments": [
@@ -269,6 +284,24 @@
       "postId": "500",
       "content": "test test",
       "createdAt": 1636007794051
+    },
+    {
+      "id": 777,
+      "postId": "500",
+      "content": "val lage na",
+      "createdAt": 1636054475140
+    },
+    {
+      "id": 130,
+      "postId": "152",
+      "content": "AI Lab",
+      "createdAt": 1636139151289
+    },
+    {
+      "id": 527,
+      "postId": "763",
+      "content": "bug exhausted",
+      "createdAt": 1636139535394
     }
   ]
 }
