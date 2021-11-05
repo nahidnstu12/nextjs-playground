@@ -1,24 +1,20 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import thunk from 'redux-thunk'
-import { createWrapper } from 'next-redux-wrapper'
-import { counter, initialState } from '../reducers'
-import courses from '../reducers/courseReducer'
+import { createStore, applyMiddleware, compose } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import { createWrapper } from "next-redux-wrapper";
+import initialState from "../reducers/initialState";
+import rootReducer from "../reducers";
 
-const createRootReducer = combineReducers(
-  { 
-    courses,
-    counter
-  }
-)
 const makeStore = () => {
-  const composeEnhancers = process.env.NODE_ENV !== 'production' ? composeWithDevTools : compose
+  console.log(initialState)
+  const composeEnhancers =
+    process.env.NODE_ENV !== "production" ? composeWithDevTools : compose;
 
   return createStore(
-    createRootReducer,
+    rootReducer,
     initialState,
     composeEnhancers(applyMiddleware(thunk))
-  )
-}
+  );
+};
 
-export default createWrapper(makeStore, {debug: true})
+export default createWrapper(makeStore, { debug: true });

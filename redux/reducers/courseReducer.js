@@ -1,4 +1,6 @@
-export default function  CourseReducer (state = [], action)
+import initialState from "./initialState";
+
+export default function  CourseReducer (state = initialState, action)
 {
     switch(action.type)
     {

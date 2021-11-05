@@ -1,6 +1,6 @@
 import styles from "./full-nav.module.scss";
 import { getAllShoppingProduct, navlinks } from "../../utils/data";
-import { RenderNavLinks } from "../common/SingleComponent";
+import { RenderNavLinks, SingleLink } from "../common/SingleComponent";
 import {
   Favorite,
   ShoppingCart,
@@ -45,14 +45,26 @@ export default function FullNavbar() {
                   </SingleIcon>
                 </div>
               </div>
-
-              <ul className={styles.navList}>
+              {/* scroll elements */}
+              {/* <ul className={styles.navList}>
                 {navlinks.map((nav) => (
                   <li className={styles.navItem} key={nav.label}>
                     <RenderNavLinks
                       label={nav.label}
                       scrollTo={nav.path}
                       className={styles.navLink}
+                    />
+                  </li>
+                ))}
+              </ul> */}
+              <ul className={styles.navList}>
+                {navlinks.map((nav) => (
+                  <li className={styles.navItem} key={nav.label}>
+                    <SingleLink
+                      label={nav.label}
+                      scrollTo={nav.path}
+                      className={styles.navLink}
+                      url={`${nav.path}`}
                     />
                   </li>
                 ))}
@@ -77,12 +89,12 @@ const RenderBottomIcon = () => {
   const [isOpenCart, setOpenCart] = useState(false);
   const handleClick = () => {
     setOpen(!isOpen);
-    setOpenCart(false)
+    setOpenCart(false);
   };
   const handleCart = () => {
-    setOpenCart(!isOpenCart)
-    setOpen(false)
-  }
+    setOpenCart(!isOpenCart);
+    setOpen(false);
+  };
   return (
     <>
       <div className={styles.navIcons}>
@@ -103,7 +115,7 @@ const RenderBottomIcon = () => {
           <ShoppingCart
             style={{ fontSize: "1.5rem" }}
             className={styles.fas}
-            onClick={handleCart }
+            onClick={handleCart}
           />
         </SingleIcon>
       </div>
@@ -120,7 +132,7 @@ const SearchInput = ({ isOpen }) => {
       className={`${styles.searchForm} ${isOpen ? styles.active : ""}`}
     >
       <input type="search" id="search-box" placeholder="search here..." />
-      <label for="search-box" className={`${styles.fa} fa-search`}>
+      <label htmlFor="search-box" className={`${styles.fa} fa-search`}>
         <Search />
       </label>
     </form>
@@ -135,7 +147,7 @@ const ShortShoppingCart = ({ isOpenCart }) => {
         className={`${styles.shoppingCart} ${isOpenCart ? styles.active : ""}`}
       >
         {cart.map((item) => (
-          <div className={styles.box}>
+          <div className={styles.box} key={item.id}>
             <Delete className={styles.faTrash} />
             <img src={item.imgUrl} alt={item.productName} />
             <div className={styles.content}>
