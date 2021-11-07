@@ -1,7 +1,9 @@
 export default {
   courses: [],
-  notify:{},
-  auth:{},
+  notify: {},
+  auth: {},
+  // shopProducts:[],
+  shopCart: [],
   // cart:[],
   // users:[],
   // orders:[],
