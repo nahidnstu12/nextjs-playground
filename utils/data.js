@@ -82,14 +82,43 @@ export const NeatBannar = [
 export const navlinks = [
   { label: "Home", path: "/" },
   { label: "SWR", path: "/swr" },
-  { label: "Feature", path: "/stylesfeatures" },
+  { label: "Shop Redux", path: "/shopredux" },
   // { label: "Portfolio", path: "portfolios" },
   // { label: "Team", path: "teams" },
   // { label: "Pricings", path: "pricings" },
-  { label: "Contacts", path: "/contacts" },
+  { label: "Shop Context", path: "/shopcontext" },
   { label: "Register", path: "/register" },
   { label: "Login", path: "/login" },
   { label: "Logout", path: "/logout" },
+];
+
+// shop products
+export const shopProducts = [
+  {
+    id: "1",
+    title: "Islami Akida",
+    price: "350",
+  },
+  {
+    id: "2",
+    title: "Inferno",
+    price: "150",
+  },
+  {
+    id: "3",
+    title: "Anna Frank",
+    price: "80",
+  },
+  {
+    id: "4",
+    title: "Nemesis",
+    price: "120",
+  },
+  {
+    id: "5",
+    title: "Crused",
+    price: "250",
+  },
 ];
 
 // multilevel category

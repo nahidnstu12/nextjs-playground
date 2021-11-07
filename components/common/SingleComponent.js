@@ -8,10 +8,12 @@ export const SingleIcon = ({ url, className, children }) => {
     </Link>
   );
 };
-export const SingleLink = ({ url, className, label }) => {
+export const SingleLink = ({ url, className, label, onClick }) => {
   return (
     <Link href={url || "#"} passHref>
-      <a className={className}>{label}</a>
+      <a className={className} onClick={onClick}>
+        {label}
+      </a>
     </Link>
   );
 };
