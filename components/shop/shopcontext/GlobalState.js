@@ -3,33 +3,54 @@ import { shopProducts } from "../../../utils/data";
 import { ShopContext } from "./shopcontext";
 
 const GlobalState = ({ children }) => {
-  const [cart, setCart] = useState([
-    {
-      id: "1",
-      title: "Islami Akida",
-      price: "350",
-    },
-    {
-      id: "2",
-      title: "Inferno",
-      price: "150",
-    },
-  ]);
-//   const [products, setProducts] = useState(null);
-//   useEffect(() => {
-//     setProducts(shopProducts);
-//   }, []);
-  const test = "test";
-  const addtoproduct = (product) => console.log(product);
-  const removetoproduct = (productId) => console.log(productId);
-  const shopObj = {
-    // addtoproduct,
-    // removetoproduct,
-    test,
-    // cart
-  }
+  const [carts, setCarts] = useState([]);
+  const [products, setProducts] = useState(null);
+  let updatedCart;
+  let updatedItemIndex;
+  useEffect(() => {
+    setProducts(shopProducts);
+  }, []);
+
+  const addtoproduct = (product) => {
+    updatedCart = [...carts];
+    updatedItemIndex = updatedCart.findIndex((item) => item.id === product.id);
+
+    if (updatedItemIndex < 0) {
+      updatedCart.push({ ...product, quantity: 1 });
+    } else {
+      const updatedItem = {
+        ...updatedCart[updatedItemIndex],
+      };
+      updatedItem.quantity++;
+      updatedCart[updatedItemIndex] = updatedItem;
+    }
+    setCarts(updatedCart);
+    // return [...updatedCart];
+  };
+
+  const removetoproduct = (productId) => {
+    updatedCart = [...carts];
+    updatedItemIndex = updatedCart.findIndex((item) => item.id === productId);
+    const updatedItem = {
+      ...updatedCart[updatedItemIndex],
+    };
+    updatedItem.quantity--;
+
+    if (updatedItem.quantity <= 0) {
+      updatedCart.splice(updatedItemIndex, 1);
+
+      // console.log("delete item");
+    } else {
+      updatedCart[updatedItemIndex] = updatedItem;
+      // console.log("reduce item");
+    }
+    setCarts(updatedCart);
+  };
+
   return (
-    <ShopContext.Provider value={shopObj}>
+    <ShopContext.Provider
+      value={[carts, setCarts, addtoproduct, removetoproduct, products]}
+    >
       {children}
     </ShopContext.Provider>
   );

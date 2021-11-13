@@ -1,6 +1,4 @@
-// import Link from "next/link";
 import { useContext } from "react";
-import { shopProducts } from "../../../utils/data";
 import { SingleLink } from "../../common/SingleComponent";
 import { ShopContext } from "./shopcontext";
 
@@ -17,19 +15,18 @@ export default function Shop({ form, setForm }) {
 
 export const Navigation = ({ form, setForm }) => {
   const value = useContext(ShopContext);
+  const carts = value[0]
+
   const style = form === "product" ? "bg-red-600 rounded" : "";
   const style2 = form === "cart" ? "bg-red-600 rounded" : "";
-  // console.log(value);
-  //   const shopCartCount = useSelector((state) =>
-  //     state.shopCart.reduce((count, cur) => count + cur.quantity, 0)
-  //   );
-  //   const totalPrice = useSelector((state) =>
-  //     state.shopCart.reduce(
-  //       (count, cur) => count + Number(cur.price) * cur.quantity,
-  //       0
-  //     )
-  //   );
-  // console.log(shopCartCount);
+  
+  const shopCartCount = carts?.reduce((count, cur) => count + cur.quantity, 0);
+  const totalPrice = carts?.reduce(
+    (count, cur) => count + Number(cur.price) * cur.quantity,
+    0
+  );
+  
+  // console.log(value[0]);
   return (
     <div className="flex justify-center">
       <div className="bg-red-400 flex justify-center items-center h-14 w-1/2 gap-8">
@@ -41,15 +38,13 @@ export const Navigation = ({ form, setForm }) => {
           onClick={() => setForm("product")}
         />
         <SingleLink
-          label={`Cart `}
-          //   label={`Cart (${shopCartCount})`}
+          label={`Cart (${shopCartCount})`}
           scrollTo={"#"}
           className={`w-24 text-center p-2 text-white font-bold ${style2}`}
           url={`#`}
           onClick={() => setForm("cart")}
         />
-        {/* <div className="text-white">Total: {totalPrice} tk</div> */}
-        <div className="text-white">{value}</div>
+        <div className="text-white">Total: {totalPrice} tk</div>
       </div>
     </div>
   );
@@ -73,16 +68,18 @@ const Items = ({ item, btnText, onClick }) => {
     </div>
   );
 };
+
 const Product = () => {
-  const value = useContext(ShopContext)
+  const value = useContext(ShopContext);
+  const addtoproduct = value[2]
+  const products = value[4]
 
   const updateCart = (item) => {
-    
-    console.log(value.test + item.id);
+    addtoproduct(item);
   };
   return (
     <div className="flex items-center mt-8 flex-col gap-4">
-      {shopProducts.map((item) => (
+      {products.map((item) => (
         <Items
           key={item.id}
           item={item}
@@ -94,21 +91,22 @@ const Product = () => {
   );
 };
 const Cart = () => {
-
+  const value = useContext(ShopContext);
+  const carts = value[0]
+  const removetoproduct = value[3]
   const updateCart = (id) => {
-  
-    // console.log(item);
+    removetoproduct(id)
   };
   return (
     <div className="flex items-center mt-8 flex-col gap-4">
-      {/* {shopCart?.map((item) => (
+      {carts?.map((item) => (
         <Items
           key={item.id}
           item={item}
           btnText="REMOVE TO CART"
           onClick={() => updateCart(item.id)}
         />
-      ))} */}
+      ))}
     </div>
   );
 };

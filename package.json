@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "json-server": "json-server db.json -p 5001 -d 2000 -w db.json",
-    "json-server-2": "json-server shop.json -p 5000 -d 2000 -w shop.json"
+    "json-server": "json-server db.json -p 5000 -d 2000 -w db.json",
+    "json-server-2": "json-server shop.json -p 5001 -d 2000 -w shop.json"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
