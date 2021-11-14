@@ -5,7 +5,7 @@ import { ShopContext } from "./shopcontext";
 export default function Shop({ form, setForm }) {
   switch (form) {
     case "product":
-      return <Product setForm={setForm} />;
+      return <Products setForm={setForm} />;
     case "cart":
       return <Cart setForm={setForm} />;
     default:
@@ -14,20 +14,18 @@ export default function Shop({ form, setForm }) {
 }
 
 export const Navigation = ({ form, setForm }) => {
-  const value = useContext(ShopContext);
-  const carts = value[0]
-  // const [carts] = useContext(ShopContext);
+  const { carts } = useContext(ShopContext);
 
   const style = form === "product" ? "bg-red-600 rounded" : "";
   const style2 = form === "cart" ? "bg-red-600 rounded" : "";
-  
+
   const shopCartCount = carts?.reduce((count, cur) => count + cur.quantity, 0);
   const totalPrice = carts?.reduce(
     (count, cur) => count + Number(cur.price) * cur.quantity,
     0
   );
-  
-  // console.log(value[0]);
+
+  //   console.log(carts);
   return (
     <div className="flex justify-center">
       <div className="bg-red-400 flex justify-center items-center h-14 w-1/2 gap-8">
@@ -70,10 +68,8 @@ const Items = ({ item, btnText, onClick }) => {
   );
 };
 
-const Product = () => {
-  const value = useContext(ShopContext);
-  const addtoproduct = value[1]
-  const products = value[3]
+const Products = () => {
+  const { addtoproduct, products } = useContext(ShopContext);
 
   const updateCart = (item) => {
     addtoproduct(item);
@@ -92,11 +88,10 @@ const Product = () => {
   );
 };
 const Cart = () => {
-  const value = useContext(ShopContext);
-  const carts = value[0]
-  const removetoproduct = value[2]
+  const { carts, removetoproduct } = useContext(ShopContext);
+
   const updateCart = (id) => {
-    removetoproduct(id)
+    removetoproduct(id);
   };
   return (
     <div className="flex items-center mt-8 flex-col gap-4">

@@ -1,12 +1,10 @@
 import { useState } from "react";
 import GlobalState from "../components/shop/shopcontext/GlobalState";
-import Shop, { Navigation } from "../components/shop/shopcontext/Shop";
-import { ShopContext } from "../components/shop/shopcontext/shopcontext";
+import Shop, { Navigation } from "../components/shop/shopcontext/ShopNew";
 
 export default function shopcontext() {
   const [form, setForm] = useState("product");
-  const addtoproduct = (product) => console.log(product);
-  const test = "test";
+
   return (
     <GlobalState>
       {/* nab */}

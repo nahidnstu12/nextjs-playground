@@ -1,10 +1,11 @@
 import { createContext } from "react";
-const context = {
+const defaultContext = {
   carts: [],
   addtoproduct: (product) => {},
   removetoproduct: (productId) => {},
-  test: "test"
+  // test: "test"
 };
+
 export const ShopContext = createContext();
 
 // {
