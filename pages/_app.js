@@ -28,11 +28,11 @@ function MyApp({ Component, pageProps }) {
   }, []);
   useEffect(() => {
     const start = () => {
-      console.log("start");
+      // console.log("start");
       setLoading(true);
     };
     const end = () => {
-      console.log("findished");
+      // console.log("findished");
       setLoading(false);
     };
     Router.events.on("routeChangeStart", start);
@@ -47,20 +47,20 @@ function MyApp({ Component, pageProps }) {
   // return loading ? (
   //   <LoadingTale />
   // ) : (
-    return(
-    <SWRConfig value={{ fetcher, dedupingInterval: 10000 }}>
-      <CookiesProvider>
-        {/* <Provider> */}
-        <StylesProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </ThemeProvider>
-        </StylesProvider>
-        {/* </Provider> */}
-      </CookiesProvider>
-    </SWRConfig>
+  return (
+      <SWRConfig value={{ fetcher, dedupingInterval: 10000 }}>
+        <CookiesProvider>
+          {/* <Provider> */}
+          <StylesProvider injectFirst>
+            <ThemeProvider theme={theme}>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </ThemeProvider>
+          </StylesProvider>
+          {/* </Provider> */}
+        </CookiesProvider>
+      </SWRConfig>
   );
 }
 

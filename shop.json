@@ -1,0 +1,29 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "title": "Islami Akida",
+            "price": "350"
+        },
+        {
+            "id": "2",
+            "title": "Inferno",
+            "price": "150"
+        },
+        {
+            "id": "3",
+            "title": "Anna Frank",
+            "price": "80"
+        },
+        {
+            "id": "4",
+            "title": "Nemesis",
+            "price": "120"
+        },
+        {
+            "id": "5",
+            "title": "Crused",
+            "price": "250"
+        }
+    ]
+}
