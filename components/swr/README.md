@@ -17,10 +17,13 @@
 - posts/postId/comments
 - optimistic UI
 - caching, mutate
+- edit post
+- delete posts
 
 ```
 
 ### Future
 ```
--Delete posts
+- code refactoring
+- ISR
 ```

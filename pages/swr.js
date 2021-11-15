@@ -1,11 +1,12 @@
 import Home from "../components/swr/Home";
+import PostContextProvider from "../components/swr/PostContext";
 
 export default function SWR() {
     return (
-        <div className="">
-            <Home />
-        </div>
-    )
+      <PostContextProvider>
+        <Home />
+      </PostContextProvider>
+    );
 }
 // export async function getServerSideProps() {
 //   console.log(`server/posts`);

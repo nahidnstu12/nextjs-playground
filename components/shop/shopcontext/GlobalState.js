@@ -4,8 +4,8 @@ import { ShopContext } from "./shopcontext";
 
 
 const GlobalState = ({ children }) => {
-  const { carts, products, addtoproduct, removetoproduct } = GlobalStateReducer();
-  // const { carts, products, addtoproduct, removetoproduct } = GlobalStateContext();
+  // const { carts, products, addtoproduct, removetoproduct } = GlobalStateReducer();
+  const { carts, products, addtoproduct, removetoproduct } = GlobalStateContext();
 
   // console.log({ carts, products, addtoproduct, removetoproduct });
 

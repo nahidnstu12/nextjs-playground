@@ -1,12 +1,13 @@
 import useSWRInfinite from "swr/infinite";
 
 export default function useSWRPaginate(url, options) {
+
   const PAGE_SIZE = 6;
+
   const getKey = (pageIndex, previousPageData) => {
-    // console.log(previousPageData.length);
     pageIndex = pageIndex + 1;
     if (previousPageData && !previousPageData.length) return null; // reached the end
-    console.log(`${url}&_page=${pageIndex}&_limit=${PAGE_SIZE}`);
+    // console.log(`${url}&_page=${pageIndex}&_limit=${PAGE_SIZE}`);
     return `${url}&_page=${pageIndex}&_limit=${PAGE_SIZE}`; // SWR key
   };
 
@@ -14,7 +15,7 @@ export default function useSWRPaginate(url, options) {
     getKey,
     options
   );
-
+  
   let paginatedData = data?.flat();
   //   let pageSize = size
 
