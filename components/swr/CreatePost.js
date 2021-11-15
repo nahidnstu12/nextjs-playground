@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function CreatePost({mutate}) {
+export default function CreatePost({ mutate }) {
   const [content, setContent] = useState("");
 
   const handleSubmit = async (e) => {
@@ -15,15 +15,15 @@ export default function CreatePost({mutate}) {
         createdAt: Date.now(),
         clientOnly: true,
       };
-      mutate( posts => [FAKE_DATA, ...posts], false);
+      mutate((posts) => [FAKE_DATA, ...posts], false);
       setContent("");
-       await axios.post("/posts", {
+      await axios.post("/posts", {
         id,
         content,
         createdAt: Date.now(),
       });
-     
-      mutate()
+
+      mutate();
     } catch (error) {
       console.error(error);
     }

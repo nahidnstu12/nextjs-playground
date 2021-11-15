@@ -31,7 +31,7 @@ export default function comments() {
     revalidateIfStale: false,
   });
 
-  console.log("post");
+  // console.log("post");
   // console.log(comments?.length);
   return (
     <div className="m-8">
@@ -44,8 +44,7 @@ export default function comments() {
       <h3 className="text-center font-semibold text-2xl mt-4 text-green-800">
         All Comments 
       </h3>
-      {/* {!comments && <LoadingTale />} */}
-      {/* {!comments && <div>{commentErr}</div>} */}
+    
       <InfiniteScroll
         dataLength={comments?.length ?? 0} //This is important field to render the next data
         next={() => setSize(size + 1)}
