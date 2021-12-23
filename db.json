@@ -96,44 +96,14 @@
       "createdAt": 1635875118297
     },
     {
-      "id": 822,
-      "content": "love birds",
-      "createdAt": 1635875559975
-    },
-    {
-      "id": 185,
-      "content": "test test",
-      "createdAt": 1635875756357
-    },
-    {
       "id": 65,
       "content": "test bird",
       "createdAt": 1635875849413
     },
     {
-      "id": 813,
-      "content": "sweete home",
-      "createdAt": 1635875876024
-    },
-    {
-      "id": 263,
-      "content": "sweet home 2",
-      "createdAt": 1635875893227
-    },
-    {
-      "id": 703,
-      "content": "testing code",
-      "createdAt": 1635954568554
-    },
-    {
       "id": 360,
       "content": "bad night",
       "createdAt": 1635966470380
-    },
-    {
-      "id": 457,
-      "content": "November",
-      "createdAt": 1636139025307
     },
     {
       "id": 152,
@@ -144,6 +114,16 @@
       "id": 763,
       "content": "coding is cool thing",
       "createdAt": 1636139465348
+    },
+    {
+      "id": 485,
+      "content": "type 999",
+      "createdAt": 1637078919467
+    },
+    {
+      "id": 230,
+      "content": "type posting 5990",
+      "createdAt": 1637079785604
     }
   ],
   "comments": [
@@ -188,48 +168,6 @@
       "postId": "663",
       "content": "after comment",
       "createdAt": 1635664407702
-    },
-    {
-      "id": 294,
-      "postId": "263",
-      "content": "sweet home returns",
-      "createdAt": 1635876338150
-    },
-    {
-      "id": 484,
-      "postId": "263",
-      "content": "returns returns",
-      "createdAt": 1635876514361
-    },
-    {
-      "id": 617,
-      "postId": "263",
-      "content": "returns 4",
-      "createdAt": 1635876529084
-    },
-    {
-      "id": 573,
-      "postId": "813",
-      "content": "mom loves home",
-      "createdAt": 1635954499870
-    },
-    {
-      "id": 789,
-      "postId": "813",
-      "content": "mom loves me",
-      "createdAt": 1635954520121
-    },
-    {
-      "id": 36,
-      "postId": "813",
-      "content": "love bird",
-      "createdAt": 1635954533741
-    },
-    {
-      "id": 994,
-      "postId": "703",
-      "content": "bug bgi",
-      "createdAt": 1635954711908
     },
     {
       "id": 805,

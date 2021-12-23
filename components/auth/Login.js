@@ -30,7 +30,7 @@ export default function Login() {
     dispatch(dispatchLogin(cred));
   };
   useEffect(() => {
-    if (Object.keys(auth).length !== 0) router.push("/dashboard");
+    // if (Object.keys(auth).length !== 0) router.push("/dashboard");
 
     // console.log(cookies);
   }, [authToken]);

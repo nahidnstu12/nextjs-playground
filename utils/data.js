@@ -82,6 +82,7 @@ export const NeatBannar = [
 export const navlinks = [
   { label: "Home", path: "/" },
   { label: "SWR", path: "/swr" },
+  { label: "AXIOS", path: "/axios" },
   { label: "Shop Redux", path: "/shopredux" },
   // { label: "Portfolio", path: "portfolios" },
   // { label: "Team", path: "teams" },
