@@ -90,7 +90,7 @@ export const navlinks = [
   { label: "Shop Context", path: "/shopcontext" },
   { label: "Register", path: "/register" },
   { label: "Login", path: "/login" },
-  { label: "Logout", path: "/logout" },
+  { label: "Admin", path: "/admin/admindashboard" },
 ];
 
 // shop products

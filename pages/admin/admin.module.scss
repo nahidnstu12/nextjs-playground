@@ -1,0 +1,110 @@
+@import "../../styles/breakpoint";
+.admin {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 5rem;
+  h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  a {
+    margin-bottom: 0.5rem;
+    width: 300px;
+    padding: 0.5rem;
+    padding-left: 0.8rem;
+
+    &:hover {
+      background-color: gainsboro;
+    }
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // background-color: #c09797;
+  gap: 1rem;
+  @include media($from: "sm", $until: "md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #fff;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    &:hover img {
+      transform: scale(0.9);
+    }
+    &Left {
+      img {
+        width: 300px;
+        height: 200px;
+      }
+      p {
+        padding: 0.4rem;
+        background-color: #e5e5e5;
+        margin-top: 0.4rem;
+        padding-left: 1rem;
+        font-weight: bold;
+        color: rgb(4, 177, 96);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+    &Right {
+      // margin-top: 1rem;
+      p {
+        color: rgb(4, 177, 96);
+      }
+      span {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.heading {
+  font-weight: bold;
+  background-color: rgb(4, 177, 96);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  width: 300px;
+  padding: 1rem;
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+.info {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  color: rgb(27, 109, 71);
+}
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // background-color: #c09797;
+  gap: 1rem;
+  .user {
+    background-color: #fff;
+    padding: 1rem;
+    span {
+      padding: 0.8rem;
+      background-color: #e5e5e5;
+      margin-top: 0.4rem;
+      // padding-left: 1rem;
+      font-weight: bold;
+      color: rgb(4, 177, 96);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}
