@@ -1,6 +1,7 @@
 // Custom Breakpoints
 $breakpoints: (
-  xs: 576px,
+  // xs: 576px,
+  xs: 590px,
   sm: 768px,
   md: 1160px,
   xxl: 1440px,
@@ -54,8 +55,10 @@ $breakpoints: (
 //   color: $pink;
 // }
 
-// @include media($until: "xs") {
-//   color: #ffd800;
+
+// md theke choto hote hbe, maxWidth
+// @include media($until: "md") {
+//   background-color: #ffd800;
 // }
 
 // @include media($from: "sm", $until: 900px, $and:"orientation: landscape"){

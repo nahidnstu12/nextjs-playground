@@ -1,0 +1,226 @@
+@import "../../styles/breakpoint";
+$bg-main: #095a55;
+$white: #ffffff;
+$bg-ylellow: #fff38e;
+$box-shadow-low: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+.contactSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: $bg-main;
+  color: $white;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  @include media($until: "md") {
+    background-color: $bg-ylellow;
+    padding: 2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: $bg-ylellow;
+    @include media($until: "md") {
+      display: none;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  z-index: 1000;
+  //   background: $white;
+  @include media($until: "sm") {
+    flex-direction: column-reverse;
+    position: unset;
+  }
+//   responsiveness for width
+  @include media($until: "xxl") {
+    width: 90%;
+    min-width: auto;
+    padding: 2rem auto;
+  }
+}
+
+.contactInfo {
+  position: absolute;
+  top: 40px;
+  width: 350px;
+  height: calc(100% - 80px);
+  background-color: $bg-main;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $box-shadow-low;
+  z-index: 1;
+  flex-direction: column;
+  @include media($until: "md") {
+    height: 550px;
+    top: 0;
+  }
+  @include media($until: "sm") {
+    position: unset;
+    width: 100%;
+    align-items: baseline;
+    flex-direction: row;
+    height: auto;
+  }
+  @include media($until: "xs") {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  h2 {
+    color: $white;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  .info {
+    position: relative;
+    margin: 20px 0;
+    li {
+      position: relative;
+      list-style: none;
+      display: flex;
+      margin: 20px 0;
+      cursor: pointer;
+      align-items: center;
+      span:nth-child(1) {
+        width: 30px;
+        min-width: 30px;
+        svg {
+          font-size: 1.2rem;
+        }
+      }
+      span:nth-child(2) {
+        font-weight: 300;
+        margin-left: 10px;
+      }
+    }
+  }
+  .sci {
+    position: relative;
+    display: flex;
+    @include media($until: "sm") {
+      margin: auto 0;
+    }
+    li {
+      list-style: none;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.contactForm {
+  position: absolute;
+  margin-left: 150px;
+  padding: 70px 40px;
+  padding-left: 250px;
+  width: calc(100% - 150px);
+  height: 100%;
+  background: $white;
+  box-shadow: $box-shadow-low;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #111;
+  @include media($until: "sm") {
+    position: unset;
+    margin-left: 0;
+    padding-left: 70px;
+    width: 100%;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .formBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    .inputBox {
+      margin-bottom: 2rem;
+      position: relative;
+      &.w50 {
+        width: 47%;
+        @include media($until: "xs") {
+          width: 100%;
+        }
+      }
+      &.w100 {
+        width: 100%;
+      }
+      input,
+      textarea {
+        width: 100%;
+        resize: none;
+        padding: 5px 0;
+        font-size: 18px;
+        font-weight: 300;
+        color: #333;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #777;
+      }
+      textarea {
+        height: 120px;
+      }
+      span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        pointer-events: none;
+        font-size: 18px;
+        font-weight: 300;
+        transition: 0.3s;
+      }
+      input:focus ~ span,
+      input:valid ~ span,
+      textarea:focus ~ span,
+      textarea:valid ~ span {
+        transform: translateY(-20px);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: $bg-main;
+      }
+    //   handling error message
+      p {
+        color: #c90e0e;
+        visibility: hidden;
+        opacity: 0;
+      }
+      input:invalid ~ p {
+        transition: 0.3s;
+        visibility: visible;
+        opacity: 100;
+      }
+    }
+    .btnSend {
+      cursor: pointer;
+      background-color: $bg-main;
+      color: $white;
+      border: none;
+      max-width: 180px;
+      padding: 12px;
+      width: 180px;
+      border-radius: 5px;
+      &:hover {
+        background-color: #0d948b;
+      }
+    }
+  }
+}
