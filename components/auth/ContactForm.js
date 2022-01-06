@@ -11,8 +11,7 @@ const contactInformation = [
   {
     id: "location",
     icon: <GoLocation />,
-    text: `139, TPL Complex, <br />
-                  Signboard, Dhaka`,
+    text: `139, TPL Complex, \n Signboard, Dhaka`,
   },
   {
     id: "mail",
@@ -31,6 +30,7 @@ const socialInformation = [
   <FaLinkedinIn />,
   <FaBloggerB />,
 ];
+
 
 export default function ContactForm() {
   return (
@@ -57,31 +57,38 @@ export default function ContactForm() {
         <div className={styles.contactForm}>
           <h2>Send Message</h2>
           <form className={styles.formBox}>
-            <div className={`${styles.inputBox} ${styles.w50}`}>
-              <input type="text" required />
-              <span>First Name</span>
-              {/* <p className="error">First name required</p> */}
-            </div>
-            <div className={`${styles.inputBox} ${styles.w50}`}>
-              <input type="text" required />
-              <span>Last Name</span>
-              {/* <p className="error">First name required</p> */}
-            </div>
-            <div className={`${styles.inputBox} ${styles.w50}`}>
-              <input type="email" required />
-              <span>Email</span>
-              {/* <p className="error">First name required</p> */}
-            </div>
-            <div className={`${styles.inputBox} ${styles.w50}`}>
-              <input type="phone" required />
-              <span>Mobile</span>
-              {/* <p className="error">First name required</p> */}
-            </div>
-            <div className={`${styles.inputBox} ${styles.w100}`}>
-              <textarea required></textarea>
-              <span>Message</span>
-              {/* <p className="error">First name required</p> */}
-            </div>
+            <InputField
+              type={"text"}
+              inputStyles={styles.inputBox}
+              inputWidth={styles.w50}
+              placehoder={"First Name"}
+              //   errMsg={"First name required"}
+            />
+            <InputField
+              type={"text"}
+              inputStyles={styles.inputBox}
+              inputWidth={styles.w50}
+              placehoder={"Last Name"}
+            />
+            <InputField
+              type={"email"}
+              inputStyles={styles.inputBox}
+              inputWidth={styles.w50}
+              placehoder={"email"}
+            />
+            <InputField
+              type={"phone"}
+              inputStyles={styles.inputBox}
+              inputWidth={styles.w50}
+              placehoder={"Phone Number"}
+            />
+            <InputField
+              type={"textarea"}
+              inputStyles={styles.inputBox}
+              inputWidth={styles.w100}
+              placehoder={"Message"}
+            />
+
             <button className={styles.btnSend}>Send</button>
           </form>
         </div>
@@ -89,3 +96,19 @@ export default function ContactForm() {
     </section>
   );
 }
+
+const InputField = ({ type, placehoder, inputStyles, inputWidth, errMsg }) => {
+  return type === "textarea" ? (
+    <div className={`${inputStyles} ${inputWidth}`}>
+      <textarea required />
+      <span>{placehoder}</span>
+      <p className="error">{errMsg}</p>
+    </div>
+  ) : (
+    <div className={`${inputStyles} ${inputWidth}`}>
+      <input type={type} required />
+      <span>{placehoder}</span>
+      <p className="error">{errMsg}</p>
+    </div>
+  );
+};
