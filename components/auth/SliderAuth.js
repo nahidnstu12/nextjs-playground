@@ -80,37 +80,10 @@ const AuthForm = (props) => {
       ? styles.signup_container
       : styles.signin_container;
 
-  // const handleSubmit = async (formData) => {
-  //   setSubmitting(true);
-  //   setServerErrors([]);
-
-  //   const response = await fetch("/api/auth", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name: formData.name,
-  //       email: formData.email,
-  //       password: formData.password,
-  //       terms: formData.terms,
-  //       token,
-  //     }),
-  //   });
-  //   const data = await response.json();
-
-  //   if (data.errors) {
-  //     setServerErrors(data.errors);
-  //   } else {
-  //     console.log("success, redirect to home page");
-  //   }
-
-  //   setSubmitting(false);
-  // };
   
   return (
     <div className={`${styles.form_container} ${container}`}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.formStyle}>
         <h1>{props.title}</h1>
         <RenderSocials providers={props.providers} />
         <span>{props.optionText}</span>

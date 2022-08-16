@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import Animation from "../animateCss/Animation";
 import { getData, postData } from "./fetchData";
 
 export default function Home() {
@@ -72,6 +73,7 @@ export default function Home() {
         </button>
       </div>
       {createPostInput()}
+      <Animation />
     </div>
   );
 }

@@ -8,7 +8,7 @@ const BtnLogin = ({ provider, bgColor, txtColor }) => {
         style={{ background: `${bgColor}`, color: `${txtColor}` }}
         onClick={() => signIn(provider.id)}
       >
-        Sign in with {provider.name}
+        Sign in with {provider?.name}
       </button>
     </div>
   );

@@ -17,6 +17,9 @@
 ```
 -sliderauth
 -register page
+-login page
+-contactForm
+-
 ```
 ### navbar
 ```
